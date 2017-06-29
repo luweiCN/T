@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+
+    <script>
+        //给一个对象绑定一个事件处理函数的第一种形式
+        //obj.onclick = fn;
+        function fn1() {
+            alert(1);
+        }
+
+        function fn2() {
+            alert(2);
+        }
+
+        //document.onclick = fn1;
+        //document.onclick = fn2; //会覆盖前面绑定的fn1
+
+        //给一个对象的同一事件绑定多个不同的函数
+        //给一个元素绑定事件函数的第二种形式
+
+        /*
+        * IE：obj.attachEvent(事件名称, 时间函数)
+        * 1.没有捕获
+        * 2.事件名称有on
+        * 3.时间函数执行顺序：标准ie正序，非标准ie倒序
+        * 4.this指向window
+        *
+        * 标准：obj.addEvevtListener(事件名称, 时间函数, 是否捕获)
+        * 是否捕获：默认是false false:冒泡 true:捕获
+        * 1.有捕获
+        * 2.事件名称没有on
+        * 3.事件函数执行顺序是正序
+        * 4.this指向触发该事件的对象
+        */
+
+        /*document.attachEvent('onclick', fn1);
+        document.attachEvent('onclick', fn2);*/
+
+        document.addEventListener('click', fn1, false);
+        document.addEventListener('click', fn2, false);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

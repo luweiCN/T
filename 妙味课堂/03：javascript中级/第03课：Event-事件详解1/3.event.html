@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+    /*
+    event：事件对象，当一个事件发生的时候，和当前这个对象发生的这个事件有关的一些详细信息都会被临时保存到一个指定地方——event对象，供我们在需要的时候调用。
+
+    兼容：
+        ie/chrome：event是一个内置的全局对象
+        ff：事件对象是通过事件函数的第一个参数传入的
+
+        如果一个函数是被事件调用的，那么这个函数定义的第一个参数就是事件对象
+
+        clientX[Y]：当一个事件发生的时候，鼠标到页面可视区的距离
+        event.clientX
+        event.clientY
+    */
+
+//    事件对象必须在一个事件调用的函数里面使用才有内容
+            //alert(event);  //这里没有事件
+            /*document.onclick = function(){
+                alert(event);
+            };*/
+
+            /*function fn1(){
+                alert(event);
+            }
+
+            fn1(); //不是事件调用，没有内容
+            document.onclick = fn1; //是事件调用，有内容*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

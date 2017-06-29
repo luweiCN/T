@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        var iNow = new Date();
+        var iNew = new Date(2017,1,20,19,06,10);
+
+        var t = Math.floor((iNew - iNow)/1000);   //默认单位是毫秒
+
+        //数字形式：new Date(2017,0,19,19,01,10);  月份0表示一月
+        //字符串形式：new Date('January 19,2017 19:01:10');
+            //1-12月英文：January,February,March,April,May,June,July,August,September,October,November,December
+        //时间差值转换：
+        //天：Math.floor(t/86400);
+        //时：Math.floor(t%86400/3600);
+        //分：Math.floor(t%86400%3600/60);
+        //秒：t%60
+
+        var str = Math.floor(t/86400) + '天' + Math.floor(t%86400/3600) +  '时' + Math.floor(t%86400%3600/60) +  '分' + t%60 + '秒';
+
+        alert(str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

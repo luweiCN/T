@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>demo-input</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script type="application/javascript" src="./js/jquery.min.js"></script>
+	<script type="application/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script language="JavaScript" src="./js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="select-number" class="col-sm-2 control-label">输入选择</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" id="select-number" placeholder="数字序号">
+            </div>
+            <input type="button" class="btn btn-primary" value="全部删除" id="delete-all">
+        </div>
+    </form>
+	<table class="table table-bordered table-hover">
+        <thead>
+        
+          <tr class="all">
+          <!--  <th width="20"><input type="button" value="全" onclick="quan();"><input type="button" value="空" onclick="bu();"></th>
+          <th width="10"><span id="all" class="btn btn-success">全/空</span></th>-->
+          <th width="8%"><span>状态</span></th>
+           <th width="5%">操作</th>
+            <th width="5%">序号</th>
+            <th width="8%">缩略图</th>
+            <th width="45%">文档名称</th>
+			<!--<th width="5%">浏览次数</th>
+           <th width="5%">下载次数</th>--> 
+            <th width="5%">页数</th>
+            <th width="5%">格式</th>
+            <th width="5%">积分</th>
+            <th width="3%">上传用户</th>
+            <th width="8%">上传时间</th>
+            <th width="5%">添加电子书</th>
+            
+   
+            <!--        </tr> <th width="150">code</th> -->    	 
+          </tr>
+        </thead>
+         
+        <tbody id="tbody" style="display: table-row-group;"><tr id="t0813160402256" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds0813160402256" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;0813160402256&quot;,&quot;843736694&quot;,this)"></span><span id="fileId0813160402256" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,0813160402256,this)" su=""></span></td><td>1</td><td><a target="_blank" href="http://www.doc88.com/p-0813160402256.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2016/03/08/0813160402256_160.png" alt="0813160402256" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(3)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=0813160402256&amp;curtb="><span style="color:#c60a00">我</span>,<span style="color:#c60a00">我们</span></a><div style="word-break:break-all"></div></td><td>4</td><td>DOC</td><td>800</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=43007730">yiyanuo024624</a></td><td>2016-03-08</td><td><button id="btn_843736694" class="btn btn-primary" type="button" onclick="add_ebook(&quot;843736694&quot;)">添加</button><br><br><button id="del0813160402256" onclick="return deldoc_confirm(&quot;0813160402256&quot;);">删除</button></td></tr><tr id="t091375369771" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds091375369771" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;091375369771&quot;,&quot;29541228&quot;,this)"></span><span id="fileId091375369771" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,091375369771,this)" su=""></span></td><td>2</td><td><a target="_blank" href="http://www.doc88.com/p-091375369771.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2012/03/18/091375369771_160.png" alt="091375369771" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(2)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=091375369771&amp;curtb="><span style="color:#c60a00">我们</span></a><div style="word-break:break-all"></div></td><td>2</td><td>PDF</td><td>30</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=2373284">jxnjxn073</a></td><td>2012-03-18</td><td><button id="btn_29541228" class="btn btn-primary" type="button" onclick="add_ebook(&quot;29541228&quot;)">添加</button><br><br><button id="del091375369771" onclick="return deldoc_confirm(&quot;091375369771&quot;);">删除</button></td></tr><tr id="t538467184977" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds538467184977" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;538467184977&quot;,&quot;61307911&quot;,this)"></span><span id="fileId538467184977" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,538467184977,this)" su="2930"></span></td><td>3</td><td><a target="_blank" href="http://www.doc88.com/p-538467184977.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2012/08/20/538467184977_160.png" alt="538467184977" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(0)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=538467184977&amp;curtb="><span style="color:#c60a00">我们</span></a><div style="word-break:break-all"></div></td><td>7</td><td>PDF</td><td>30</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=10402064">ionb4hb</a></td><td>2012-08-20</td><td><button id="btn_61307911" class="btn btn-primary" type="button" onclick="add_ebook(&quot;61307911&quot;)">添加</button><br><br><button id="del538467184977" onclick="return deldoc_confirm(&quot;538467184977&quot;);">删除</button></td></tr><tr id="t9045147975727" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds9045147975727" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;9045147975727&quot;,&quot;524143484&quot;,this)"></span><span id="fileId9045147975727" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,9045147975727,this)" su="2931"></span></td><td>4</td><td><a target="_blank" href="http://www.doc88.com/p-9045147975727.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2015/01/02/9045147975727_160.png" alt="9045147975727" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(0)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=9045147975727&amp;curtb=">致<span style="color:#c60a00">我们</span></a><div style="word-break:break-all"></div></td><td>1</td><td>PDF</td><td>700</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=32419989">ziyoufahuipbb</a></td><td>2015-01-02</td><td><button id="btn_524143484" class="btn btn-primary" type="button" onclick="add_ebook(&quot;524143484&quot;)">添加</button><br><br><button id="del9045147975727" onclick="return deldoc_confirm(&quot;9045147975727&quot;);">删除</button></td></tr><tr id="t001808052697" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds001808052697" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;001808052697&quot;,&quot;24267981&quot;,this)"></span><span id="fileId001808052697" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,001808052697,this)" su="2932"></span></td><td>5</td><td><a target="_blank" href="http://www.doc88.com/p-001808052697.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2012/02/23/001808052697_160.png" alt="001808052697" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(0)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=001808052697&amp;curtb="><span style="color:#c60a00">我们</span>受</a><div style="word-break:break-all"></div></td><td>4</td><td>PDF</td><td>300</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=2536351">hongwe52007323d</a></td><td>2012-02-23</td><td><button id="btn_24267981" class="btn btn-primary" type="button" onclick="add_ebook(&quot;24267981&quot;)">添加</button><br><br><button id="del001808052697" onclick="return deldoc_confirm(&quot;001808052697&quot;);">删除</button></td></tr><tr id="t004207857914" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds004207857914" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;004207857914&quot;,&quot;24904176&quot;,this)"></span><span id="fileId004207857914" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,004207857914,this)" su="2933"></span></td><td>6</td><td><a target="_blank" href="http://www.doc88.com/p-004207857914.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2012/02/26/004207857914_160.png" alt="004207857914" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(0)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=004207857914&amp;curtb="><span style="color:#c60a00">我们</span>老</a><div style="word-break:break-all"></div></td><td>37</td><td>PDF</td><td>500</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=2366551">xinyuz091zl</a></td><td>2012-02-26</td><td><button id="btn_24904176" class="btn btn-primary" type="button" onclick="add_ebook(&quot;24904176&quot;)">添加</button><br><br><button id="del004207857914" onclick="return deldoc_confirm(&quot;004207857914&quot;);">删除</button></td></tr><tr id="t886680190066" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds886680190066" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;886680190066&quot;,&quot;25185577&quot;,this)"></span><span id="fileId886680190066" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,886680190066,this)" su="2934"></span></td><td>7</td><td><a target="_blank" href="http://www.doc88.com/p-886680190066.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2012/02/27/886680190066_160.png" alt="886680190066" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(0)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=886680190066&amp;curtb="><span style="color:#c60a00">我们</span></a><div style="word-break:break-all"></div></td><td>5</td><td>PDF</td><td>30</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=2373236">weilni_082</a></td><td>2012-02-27</td><td><button id="btn_25185577" class="btn btn-primary" type="button" onclick="add_ebook(&quot;25185577&quot;)">添加</button><br><br><button id="del886680190066" onclick="return deldoc_confirm(&quot;886680190066&quot;);">删除</button></td></tr><tr id="t6049868405244" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds6049868405244" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;6049868405244&quot;,&quot;393427644&quot;,this)"></span><span id="fileId6049868405244" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,6049868405244,this)" su="2935"></span></td><td>8</td><td><a target="_blank" href="http://www.doc88.com/p-6049868405244.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2014/09/24/6049868405244_160.png" alt="6049868405244" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(0)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=6049868405244&amp;curtb=">@<span style="color:#c60a00">我们</span></a><div style="word-break:break-all"></div></td><td>1</td><td>PDF</td><td>1000</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=26637793">billdoc48</a></td><td>2014-09-24</td><td><button id="btn_393427644" class="btn btn-primary" type="button" onclick="add_ebook(&quot;393427644&quot;)">添加</button><br><br><button id="del6049868405244" onclick="return deldoc_confirm(&quot;6049868405244&quot;);">删除</button></td></tr><tr id="t146802991355" style="height:140px"><td class="checkbox-select">已添加</td><td><span id="fileIds146802991355" class="glyphicon glyphicon-plus" style="cursor: pointer; display: none;" aria-hidden="true" onclick="add(&quot;146802991355&quot;,&quot;27883566&quot;,this)"></span><span id="fileId146802991355" class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor: pointer; display: block; color: red;" onclick="deleteById(0,146802991355,this)" su="2936"></span></td><td>9</td><td><a target="_blank" href="http://www.doc88.com/p-146802991355.html"><div class="imgbox"><img class="simg" src="http://png.doc88.com/2012/03/09/146802991355_160.png" alt="146802991355" style="width:80px"></div></a></td><td class="titles"><span style="color:orange">(0)</span><a target="_blank" href="https://cms.doc88.com/admin/view.do?p_code=146802991355&amp;curtb="><span style="color:#c60a00">我们</span>配</a><div style="word-break:break-all"></div></td><td>1</td><td>PDF</td><td>30</td><td><a target="_blank" href="category.php?act=user_show&amp;id=50000&amp;memberid=2369339">gulalagulaa1</a></td><td>2012-03-09</td><td><button id="btn_27883566" class="btn btn-primary" type="button" onclick="add_ebook(&quot;27883566&quot;)">添加</button><br><br><button id="del146802991355" onclick="return deldoc_confirm(&quot;146802991355&quot;);">删除</button></td></tr></tbody>
+      </table>
+</body>
+
+<script>
+    function deleteById(id,num,i){
+ 		var su=$(i).attr("su")
+        $.get("category.php?act=delete_file&id="+id+"&su="+su,function(result){
+            $("#fileIds"+num).css('display','block');
+            $("#fileId"+num).css('display','none');
+            //	$("#t"+num).find("td").first().html("已添加");
+  		})
+  	}
+
+    $(function () {
+        $('#select-number').blur(function () {
+            for(var i=0; i<10; i++){
+                $('.checkbox-select').eq(i).children().attr('checked',false);
+            }  //清除所有的复选框选中状态
+            if($('#select-number').val() > 10 || $('#select-number').val() < 1){
+                alert('请输入1-10之间的数');
+            } else{
+                for(var i=0; i<$('#select-number').val(); i++ ){
+                    $('.checkbox-select').eq(i).children().attr('checked',true);
+                } //根据输入的数字让对应的所有复合要求的复选框选中
+            }
+        });
+
+        $('#delete-all').click(function () {
+            if(confirm('删除后无法恢复，确定全部删除？')){
+                $('.glyphicon-remove').click();
+            }
+        });
+
+    });
+
+</script>
+</html>

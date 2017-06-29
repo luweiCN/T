@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #img1{
+            width: 300px;
+            position: absolute;
+            top: 50px;
+            left: 600px;
+        }
+        #img2{
+            width: 300px;
+            position: absolute;
+            top: 500px;
+            left: 600px;
+        }
+    </style>
+
+    <script src="./luwei.js"></script>
+    <script>
+        window.onload = function(){
+            var oImg1 = document.getElementById('img1');
+            var oImg2 = document.getElementById('img2');
+
+            oImg1.onclick = function(){
+                var _this = this;
+                shake(_this, 'left', function(){shake(_this, 'top')});
+            };
+
+            oImg2.onclick = function(){
+                var _this = this;
+                shake(_this, 'left', function(){shake(_this, 'top')});
+            };
+        };
+
+        function shake(obj, attr, endFn){
+            var pos = parseInt(getStyle(obj, attr)); //有隐患
+            var arr = []; //20, -20, 18, -18, ....., 0
+            var num = 0;
+
+            obj.shake = null;
+
+            for(var i=20; i>0; i-=2){
+                arr.push(i, -i);
+            }
+            arr.push(0);
+
+            clearInterval(obj.shake);
+            obj.shake = setInterval(function(){
+                obj.style[attr] = pos + arr[num] + 'px';
+                num++;
+
+                if(num == arr.length){
+                    clearInterval(obj.shake);
+                    endFn&&endFn();
+                }
+            },65)
+        }
+
+    </script>
+</head>
+<body>
+    <img id="img1" src="./img/4.jpg" alt="">
+    <img id="img2" src="./img/5.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="www.baidu.com">
+        placeholder:输入框提示信息 <br>
+        <input type="text" placeholder="请输入内容">
+        <br>
+        <input type="password" placeholder="请输入内容">
+        <br>
+
+        autocomplete:是否保存用户输入值 <br>
+        <input type="text" placeholder="请输入内容" autocomplete="on">
+        <br>
+        <input type="text" placeholder="请输入内容" autocomplete="off">
+        <br>
+
+        autofocus:指定表单获取输入焦点 <br>
+        <input type="text">
+        <br>
+        <input type="text" autofocus>
+        <br>
+
+        list和datalist:为输入框构造一个选择列表 <br>
+        <input type="text" list="valList" />
+        <datalist id="valList">
+            <option value="javascript">javascript</option>
+            <option value="html">html</option>
+            <option value="css">css</option>
+        </datalist>
+        <br>
+
+        required:此项必填，不能为空 <br>
+        <input type="text" required>
+        <br>
+
+        Pattern:正则验证 <br>
+        <input type="text" pattern="\d{1,5}">
+        <br>
+
+        Formaction:在submit里定义提交地址
+        <input type="submit" value="提交">
+        <input type="submit" value="保存至草稿箱" formaction="www.google.com">
+    </form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1 li{
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            position: relative;
+            float: left;
+            list-style: none;
+            background: #9f3;
+            border: 1px solid black;
+        }
+
+        #ul1 li div{
+            background: #CCCCCC;
+            overflow: hidden;
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            height: 0;
+            filter: alpha(opacity:0);
+            opacity: 0;
+        }
+
+    </style>
+
+    <script src="./move2.js"></script>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('ul1');
+            var aLI = oUl.getElementsByTagName('li');
+            
+            for(var i=0; i<aLI.length; i++){
+                aLI[i].onmouseover = function () {
+                    var oDiv = this.getElementsByTagName('div')[0];
+
+                    oDiv.style.height = 'auto';         //为了获取div的高度，我们先把div展开，获取并存储他的高度，再把他的高度改回0
+                    var iHeight = oDiv.offsetHeight;
+                    oDiv.style.height = 0;
+
+                    startMove(oDiv, {'opacity': 100,'height': iHeight});
+                }
+
+                aLI[i].onmouseout = function () {
+                    var oDiv = this.getElementsByTagName('div')[0];
+
+                    startMove(oDiv, {'opacity': 0,'height': 0});
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li>
+            首页
+            <div>
+                放松放松地 <br />
+                ssds<br />
+                df dfd <br />
+                sdsdsds<br />
+            </div>
+        </li>
+        <li>
+            产品
+            <div>
+                放松放松地 <br />
+                ssds<br />
+                df dfd <br />
+                ssds<br />
+                df dfd <br />
+                sdsdsds<br />
+            </div>
+        </li>
+        <li>
+            关于
+            <div>
+                放松放松地 <br />
+                ssds<br />
+                df dfd <br />
+                ssds<br />
+                df dfd <br />
+                ssds<br />
+                df dfd <br />
+                sdsdsds<br />
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

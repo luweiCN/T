@@ -1,0 +1,52 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            right: 0;
+        }
+        body{
+            height: 3000px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+
+            window.onscroll = function () {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+                var T = scrollTop + (document.documentElement.clientHeight - oDiv.offsetHeight)/2;
+
+                startMove(parseInt(T));
+            };
+
+            var timer = null;
+
+            function startMove(iTarget){
+                clearInterval(timer);
+                
+                timer = setInterval(function () {
+                    var iSpeed = (iTarget - oDiv.offsetTop) / 8;
+                    iSpeed = iSpeed>0? Math.ceil(iSpeed): Math.floor(iSpeed);
+
+                    if(oDiv.offsetTop == iTarget){
+                        clearInterval(timer);
+                    } else {
+                        oDiv.style.top = oDiv.offsetTop + iSpeed + 'px';
+                    }
+                }, 30)
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

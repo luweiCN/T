@@ -1,0 +1,21 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./jquery-1.10.1.min.js"></script>
+    <script>
+        $(function () {
+            var oDiv = $('#div1');
+            oDiv.click(function () {
+                //alert($(this).html()); //纯jq写法
+                //alert(this.innerHTML); //纯js写法
+                //alert($(this).innerHTML); //可以。但是不允许
+                //alert(this.html()); //可以。但是不允许
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+
+        #img1{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 800px;
+            top: 300px;
+        }
+
+    </style>
+
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oImg = document.getElementById('img1');
+
+            function drag (obj) {
+                obj.onmousedown = function (ev) {
+                    var ev = ev || event;
+
+                    var disX = ev.clientX - this.offsetLeft;
+                    var disY = ev.clientY - this.offsetTop;
+
+                    if(obj.setCapture){
+                        obj.setCapture();
+                    }
+
+                    document.onmousemove = function (ev) {
+                        var ev = ev || event;
+
+                        var L = ev.clientX - disX;
+                        var T = ev.clientY - disY
+
+                        var L1 = L;
+                        var R1 = L + obj.offsetWidth;
+                        var T1 = T;
+                        var B1 = T + obj.offsetHeight;
+
+                        var L2 = oImg.offsetLeft;
+                        var R2 = L2 + oImg.offsetWidth;
+                        var T2 = oImg.offsetTop;
+                        var B2 = T2 + oImg.offsetHeight;
+
+                        if(R1 < L2 || L1 > R2 || B1 < T2 || T1 > B2){
+                            oImg.src = './1.jpg';
+                        } else {
+                            oImg.src = './2.jpg';
+                        }
+
+                        obj.style.left = L + 'px';
+                        obj.style.top = T + 'px';
+                    }
+
+                    document.onmouseup = function () {
+                        document.onmousemove = null;
+                        //释放全局捕获 releaseCapture();
+                        if(obj.releaseCapture){
+                            obj.releaseCapture();
+                        }
+                    }
+
+                    return false;
+                }
+            }
+
+            drag(oDiv);
+        }
+    </script>
+</head>
+<body>
+    ihiljlilnlnlnlnj
+    <div id="div1"></div>
+    <img src="1.jpg" id="img1">
+</body>
+</html>

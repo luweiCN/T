@@ -1,0 +1,32 @@
+1.链式运动框架
+    ——回调函数
+        -运动停止，执行函数
+        -运动停止时，开始下一次运动
+        -例子：土豆网右下角菜单
+
+2.完美运动框架
+  ——多个值同时变化
+    -setStyle同时设置多个属性
+       参数传递：a.json的使用 b.for in遍历属性
+  ——运用到运动框架
+  ——检测运动停止
+    -标志变量
+  ——例子：伸缩同时淡入淡出的菜单
+
+3.运动框架总结
+    ——运动框架演变过程
+        -starMove(iTarget)  运动框架
+        -starMove(obj, iTarget)  多物体
+        -starMove(obj, attr, iTarget)  任意值
+        -starMove(obj, attr, iTarget, fn)  链式运动
+        -starMove(obj, json)  多值运动
+        -starMove(obj, json, fn)  完美运动框架
+
+4.运动框架应用
+1）例子：多图片展开、收缩
+    ——布局转换
+2）例子：新浪微博
+    ——链式运动
+3）例子：无缝运动
+    ——走到一半拉回来
+

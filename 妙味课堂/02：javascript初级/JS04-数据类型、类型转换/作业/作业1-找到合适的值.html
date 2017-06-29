@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+
+    <script>
+
+        var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', ' ', function () {
+            alert(1);
+        }, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function () {
+            alert(3);
+        }, 'xyz' - 90];
+
+        /*
+         1、找到arr里所有的数字：-98765, 34, -2, 0, 5
+         2、找到可以转成数字的：'100px', -98765, 34, -2, 0, '300', '23.45元',  5
+         3、把转成数字以后，最大值判断出来：300
+         4、把 NaN 所在的位置找出来：1 14 17  19
+         */
+
+
+        var arrNum = [];
+        var arrCanBeNum = [];
+        var j = 0;
+        var arrAllNum = [];
+        var max = 0;
+        var nanPosition = [];
+
+        //1、找到arr里所有的数字：
+        isNumber = function () {
+            j = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (!(isNaN(arr[i])) && (typeof(arr[i]) == 'number')) {
+                    arrNum[j] = arr[i];
+                    j++;
+                }
+            }
+        }
+
+        //2、找到可以转成数字的：
+        canBeNum = function () {
+            j = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (parseInt(arr[i]) === 0) {
+                    arrCanBeNum[j] = arr[i];
+                    j++;
+                }
+                if (parseInt(arr[i]) || parseFloat(arr[i])) {
+                    arrCanBeNum[j] = arr[i];
+                    j++;
+                }
+            }
+        }
+
+        //3、把转成数字以后，最大值判断出来
+        findMax = function () {
+            canBeNum();
+            j = 0;
+            for (var i = 0; i < arrCanBeNum.length; i++) {
+                if (Number(arrCanBeNum[i]) == 0) {
+                    arrAllNum[j] = 0;
+                    j++;
+                }
+                if (parseInt(arrCanBeNum[i]) == parseFloat(arrCanBeNum[i])) {
+                    arrAllNum[j] = parseInt(arrCanBeNum[i]);
+                    j++;
+                } else {
+                    arrAllNum[j] = parseFloat(arrCanBeNum[i]);
+                    j++;
+                }
+            }
+
+            max = arrAllNum[0];
+            for (var i = 0; i < arrAllNum.length; i++) {
+                if (max < arrAllNum[i]) {
+                    max = arrAllNum[i];
+                }
+            }
+        }
+
+        //4、把 NaN 所在的位置找出来
+        findNaN = function () {
+            j = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if ((Number(arr[i]) != 0) && (arr[i] != '')) {
+                    if (!arr[i]) {
+                        nanPosition[j] = i;
+                        j++;
+                    }
+                }
+            }
+        }
+
+        isNumber();
+        canBeNum();
+        findMax();
+        findNaN();
+
+        alert('arr里所有的数字：' + arrNum);
+        alert('可以转成数字的：' + arrCanBeNum);
+        alert('最大值：' + max);
+        alert('NaN 所在的位置：' + nanPosition);
+
+    </script>
+
+</head>
+
+<body>
+</body>
+</html>

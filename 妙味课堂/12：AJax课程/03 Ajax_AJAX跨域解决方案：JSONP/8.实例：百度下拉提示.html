@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        #q{
+            width: 300px;
+            height: 30px;
+            padding: 5px;
+            border: 1px solid #f90;
+            font-size: 16px;
+        }
+        #ul1{
+            border: 1px solid #f90;
+            width: 310px;
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+        li a{
+            line-height: 30px;
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        li a:hover{
+            background: #f90;
+            color: white;
+        }
+    </style>
+    <script>
+        function keySearch(data){
+            var oUl = document.getElementById('ul1');
+            var html = '';
+            if (data.g.length){
+                oUl.style.display = 'block';
+                for(var i=0; i<data.g.length; i++){
+                    html += '<li><a target="_blank" href="https://www.baidu.com/s?wd=' + data.g[i].q + '">' + data.g[i].q + '<a></li>';
+                }
+                oUl.innerHTML = html;
+            }
+        }
+        window.onload = function () {
+            var oQ = document.getElementById('q');
+            var oUl = document.getElementById('ul1');
+
+            oQ.onkeyup = function () {
+                if (this.value!=''){
+                    var oScript = document.createElement('script');
+                 oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?json=1&cb=keySearch&wd=' + this.value;
+                    document.body.appendChild(oScript);
+                } else {
+                    oUl.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="q">
+    <ul id="ul1"></ul>
+</body>
+</html>

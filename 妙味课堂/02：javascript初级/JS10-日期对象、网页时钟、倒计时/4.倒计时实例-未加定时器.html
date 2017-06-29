@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .t1, .t2{
+            width: 300px;
+            height: 25px;
+            font-size: 18px;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            var aInp = document.getElementsByTagName('input');
+            var iNow = null;
+            var iNew = null;
+            var t = 0;
+            var str = '';
+
+            aInp[2].onclick = function (){
+                iNew = new Date(aInp[0].value);
+                iNow = new Date();
+                t = Math.floor((iNew - iNow) / 1000);
+                str = Math.floor(t/86400) + '天' + Math.floor(t%86400/3600) +  '时' + Math.floor(t%86400%3600/60) +  '分' + t%60 + '秒';
+                aInp[1].value = str;
+            };
+        };
+    </script>
+</head>
+<body>
+距离：<input class="t1" type="text" value="January 19,2017 19:01:10"/>
+<br/><br/>
+还剩：<input class="t2" type="text"/>
+<input type="button" value="开始倒计时">
+</body>
+</html>

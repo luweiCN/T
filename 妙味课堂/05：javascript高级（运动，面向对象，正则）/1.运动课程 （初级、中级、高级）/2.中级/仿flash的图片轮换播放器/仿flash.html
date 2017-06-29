@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+*{ margin:0; padding:0; list-style:none;}
+li{ float:left;}
+body{ background:#999;}
+
+#cont{ width:400px; height:445px; margin:100px auto; position:relative;}
+#bigPic{ width:400px; height:320px;}
+#bigPic li{ position:absolute; height:320px; width:400px; overflow:hidden;}
+
+#small{ width:380px; height:97px; position:relative; left:0px; top:0; overflow:hidden; border:10px solid #ccc;}
+#smallPic{ width:9999px; position:absolute; left:0;}
+#smallPic li{ padding-right:10px; width:120px; filter:alpha(opacity:50); opacity:0.5; cursor:pointer;}
+#smallPic img{ width:120px;} 
+
+#left{ width:200px; height:320px; position:absolute; left:0; top:0; background:red; z-index:9999; filter:alpha(opacity:0); opacity:0;}
+#right{ width:200px; height:320px; position:absolute; left:160px; top:0; background:red; z-index:9999; filter:alpha(opacity:0); opacity:0;}
+
+#prev{ width:60px; height:60px; background:url(images/btn.gif) no-repeat; position:absolute; left:10px; top:130px; z-index:99999999; filter:alpha(opacity:0); opacity:0; cursor:pointer;}
+#next{ width:60px; height:60px; background:url(images/btn.gif) no-repeat 0 -60px; position:absolute; right:10px; top:130px; z-index:99999999; filter:alpha(opacity:0); opacity:0; cursor:pointer;}
+
+</style>
+<title>无标题文档</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var iNow=0;
+	var MaxZindex=3;
+	var timer=null;
+	
+	var w=$('#smallPic li').eq(0).width()+10;
+	$('#smallPic li').hover(function(){
+		$(this).stop(false,true).animate({opacity:1},'slow')
+		clearInterval(timer);
+		},
+		function(){
+			timer=setInterval(auto,1000);
+			if($(this).index()==iNow) return
+			$(this).stop(false,true).animate({opacity:0.5},'fast');
+		})
+		
+    $('#smallPic li').click(function(){
+        if($(this).index()==iNow) return
+		iNow=$(this).index();	
+		tab();	
+	})
+	
+	timer=setInterval(auto,1000);
+	
+	function auto()
+	{
+		iNow++;
+		if(iNow>5)
+		{
+			iNow=0;
+		}
+		tab();
+	}
+	
+	function tab()
+	{
+		$('#bigPic li').eq(iNow).stop(false,true)
+		.css({'z-index':function(){return MaxZindex++;},'height':0}).animate({height:320},'fast');
+		$('#smallPic li').stop(false,true).animate({opacity:0.5},'fast').eq(iNow).stop(true,false).animate({opacity:1},'slow')
+		if(iNow>=2&&iNow<=$('#smallPic li').length-2)
+		{
+			$('#smallPic').stop(false,true).animate({left:-(iNow-1)*w})
+		}
+		if(iNow==5)
+		{
+			$('#smallPic').stop(false,true).animate({left:-3*w})
+		}
+		else if(iNow==1||iNow==0)
+		{
+			$('#smallPic').stop(false,true).animate({left:0})
+		}	
+	}
+	
+	$('#left').hover(function(){
+		$('#prev').stop(true,false).animate({opacity:0.5},'fast');
+		clearInterval(timer);
+		},
+		function(){
+			$('#prev').stop(true,false).animate({opacity:0},'fast');
+			timer=setInterval(auto,1000);
+		});
+	
+	$('#right').hover(function(){
+		$('#next').stop(true,false).animate({opacity:0.5},'fast');
+		clearInterval(timer);
+		},
+		function(){
+			$('#next').stop(true,false).animate({opacity:0},'fast');
+			timer=setInterval(auto,1000);
+		});
+	
+	$('#prev').hover(function(){
+		$('#prev').stop(true,false).animate({opacity:0.5},'fast');
+		clearInterval(timer);
+		},
+		function(){
+			$('#prev').stop(true,false).animate({opacity:0},'fast');
+			timer=setInterval(auto,1000);
+		});
+	
+	$('#next').hover(function(){
+		$('#next').stop(true,false).animate({opacity:0.5},'fast');
+		clearInterval(timer);
+		},
+		function(){
+			$('#next').stop(true,false).animate({opacity:0},'fast');
+			timer=setInterval(auto,1000);
+		});
+		
+	
+	$('#next').click(function(){
+		iNow++;
+		if(iNow>5)
+		{
+			iNow=0;
+		}
+		tab();
+	})		
+	
+	$('#prev').click(function(){
+		iNow--;
+		if(iNow<0)
+		{
+			iNow=5;
+		}
+		tab();
+	})
+})
+</script>
+</head>
+
+<body>
+<div id="cont">
+    <div id="prev"></div>
+    <div id="next"></div>
+	<a id="left"></a>
+	<a id="right"></a>
+    <ul id="bigPic">
+	   <li style="z-index:2"><img src="images/11.jpg" /></li>
+	   <li><img src="images/12.jpg" /></li>
+	   <li><img src="images/13.jpg" /></li>
+	   <li><img src="images/14.jpg" /></li>
+	   <li><img src="images/15.jpg" /></li>
+	   <li><img src="images/16.jpg" /></li>
+	</ul>
+	
+	<div id="small">
+		<ul id="smallPic">
+		   <li style="filter:alpha(opacity:100); opacity:1"><img src="images/11.jpg" /></li>
+		   <li><img src="images/12.jpg" /></li>
+		   <li><img src="images/13.jpg" /></li>
+		   <li><img src="images/14.jpg" /></li>
+		   <li><img src="images/15.jpg" /></li>
+		   <li><img src="images/16.jpg" /></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

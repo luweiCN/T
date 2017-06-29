@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #img1{
+            width: 300px;
+            position: absolute;
+            top: 50px;
+            left: 600px;
+        }
+    </style>
+
+    <script src="./luwei.js"></script>
+    <script>
+        window.onload = function(){
+            var oImg = document.getElementById('img1');
+
+            oImg.onclick = function(){
+                var pos = parseInt(getStyle(oImg, 'left'));
+                var arr = []; //20, -20, 18, -18, ....., 0
+                var timer = null;
+                var num = 0;
+
+                for(var i=20; i>0; i-=2){
+                    arr.push(i, -i);
+                }
+                arr.push(0);
+
+                clearInterval(timer);
+                setInterval(function(){
+                    oImg.style.left = pos + arr[num] + 'px';
+                    num++;
+
+                    if(num == arr.length){
+                        clearInterval(timer);
+                    }
+                },65)
+            };
+        };
+
+
+    </script>
+</head>
+<body>
+    <img id="img1" src="./img/4.jpg" alt="">
+</body>
+</html>

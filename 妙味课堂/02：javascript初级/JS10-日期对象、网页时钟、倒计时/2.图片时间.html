@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div{
+            text-align: center;
+            margin: 300px auto;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            
+            FnTime();
+            setInterval(FnTime, 1000);
+
+
+            function FnTime(){
+                var oBody = document.body;
+                var oP = document.getElementById('time');
+                var aImg = document.getElementsByTagName('img');
+                var aUrl = ['./img/0.JPG','./img/1.JPG','./img/2.JPG','./img/3.JPG','./img/4.JPG','./img/5.JPG','./img/6.JPG','./img/7.JPG','./img/8.JPG','./img/9.JPG','./img/colon.JPG']
+                var num = 0;
+
+                var myTime = new Date();
+                var iHours = myTime.getHours();
+                var iMinutes = myTime.getMinutes();
+                var iSeconds = myTime.getSeconds();
+
+                var str = toTwo(iHours) + toTwo(iMinutes) + toTwo(iSeconds);
+
+
+                for(var i=0; i<aImg.length; i++){
+                    if(i ==2 || i == 5){
+                        aImg[i].src = aUrl[10];
+                        i++;
+                    }
+                    aImg[i].src = aUrl[str.charAt(num)];
+                    num++;
+                }
+            }
+        };
+
+        function toTwo(n){
+            return n<10? '0' + n: '' + n;
+        }
+
+    </script>
+</head>
+<body>
+<div>
+<img src="./img/0.JPG" alt="">
+<img src="./img/0.JPG" alt="">
+<img src="./img/0.JPG" alt="">
+<img src="./img/0.JPG" alt="">
+<img src="./img/0.JPG" alt="">
+<img src="./img/0.JPG" alt="">
+<img src="./img/0.JPG" alt="">
+<img src="./img/0.JPG" alt="">
+</div>
+
+</body>
+</html>

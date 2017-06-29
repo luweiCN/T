@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            alert(oDiv.classList.item(2));
+            oDiv.classList.add('box4');
+            oDiv.classList.remove('box2');
+            oDiv.classList.toggle('box2');
+        }
+    </script>
+</head>
+<body>
+    <div class="box1 box2 box3" id="div1"></div>
+</body>
+</html>

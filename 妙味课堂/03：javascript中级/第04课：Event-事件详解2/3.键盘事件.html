@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+
+    <script>
+        /*
+        * onkeydown : 当键盘按键按下的时候触发
+        * onkeyup : 当键盘按键抬起的时候触发
+        *
+        * event.keyCode :数字类型  键值  键盘上字符对应的ascii码
+        *    ctrlKey, shiftKey, altKey  布尔值
+        *    当一个事件发生时，如果ctrl或者shift或者alt是按下的反悔true，否则返回false
+        */
+
+        /*document.onkeydown = function (ev) {
+            ev = ev || event;
+            alert(ev.keyCode);
+        }*/
+
+        document.onkeydown = function (ev) {
+            ev = ev || event;
+            alert(ev.ctrlKey);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

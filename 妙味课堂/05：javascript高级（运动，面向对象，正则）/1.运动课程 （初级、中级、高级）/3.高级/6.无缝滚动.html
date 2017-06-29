@@ -1,0 +1,89 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            margin: 10px auto;
+            position: relative;
+            width: 1100px;
+            height: 170px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        #div1 ul{
+            position: absolute;
+            left: 0;
+        }
+        #div1 ul li{
+            list-style: none;
+            float: left;
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+        }
+        #div1 ul li img{
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oUl = oDiv.getElementsByTagName('ul')[0];
+            var aLi = oUl.getElementsByTagName('li');
+            var aA = document.getElementsByTagName('a');
+            var timer = null;
+            var iSpeed = 0;
+
+            oUl.innerHTML += oUl.innerHTML;
+            oUl.style.width = aLi.length * aLi[0].offsetWidth + 'px';
+
+            function fnMove() {
+                if (oUl.offsetLeft < -oUl.offsetWidth / 2){
+                    oUl.style.left = 0;
+                } else if(oUl.offsetLeft > 0){
+                    oUl.style.left = -oUl.offsetWidth / 2 + 'px';
+                }
+                oUl.style.left = oUl.offsetLeft + iSpeed + 'px';
+            };
+
+            timer = setInterval(fnMove,30);
+
+            aA[0].onclick = function () {
+                iSpeed = -5;
+            };
+            aA[1].onclick = function () {
+                iSpeed = 5;
+            };
+
+            oDiv.onmouseover = function () {
+                clearInterval(timer);
+            };
+
+            oDiv.onmouseout = function () {
+                timer = setInterval(fnMove,30);
+            };
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:;">←左滚动</a>
+    <a href="javascript:;">右滚动→</a>
+    <div id="div1">
+        <ul>
+            <li><img src="./img/1.jpg" alt=""></li>
+            <li><img src="./img/2.jpg" alt=""></li>
+            <li><img src="./img/3.jpg" alt=""></li>
+            <li><img src="./img/4.jpg" alt=""></li>
+            <li><img src="./img/5.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

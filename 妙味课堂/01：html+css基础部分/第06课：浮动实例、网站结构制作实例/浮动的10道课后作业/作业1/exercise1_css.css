@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/******css reset******/
+body,ul,li,a,img,h3{margin: 0; padding: 0; font-family: 黑体}
+li{list-style:none}
+a{text-decoration:none;}
+img{border:none; vertical-align:top;}
+h3{font-weight: normal; font-size: 12px; color: #000;}
+/******end reset******/
+
+/*******public********/
+.wrap{width: 663px; height: 418px; padding: 17px 0 16px 19px; margin: 26px 30px 32px 25px; border: 1px solid #d9d9d9; margin: 100px auto;}
+.clear{zoom: 1;}
+.clear:after{content: ""; display: block; clear:both;}
+.head ul{background: url("./img/1.png") no-repeat; padding: 12px 0 0 91px;}
+.head li{float: left; padding: 0 10px; font-size: 13px;}
+h3{font-size: 13px; line-height: 31px;}
+.content ul{width: 112px; padding: 10px 20px 0 0; float: left;}
+
+
+/*******public********/

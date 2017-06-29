@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background: red;
+            left: 0px;
+            top: 50px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oInp = document.getElementsByTagName('input')[0];
+
+            var timer = null;
+
+            function startMove (iTarget) {
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    var iSpeed = (iTarget - oDiv.offsetLeft)/8;
+                    iSpeed = iSpeed>0? Math.ceil(iSpeed): Math.floor(iSpeed);
+
+                    if(oDiv.offsetLeft == iTarget){
+                        clearInterval(timer);
+                    } else {
+                        oDiv.style.left = oDiv.offsetLeft + iSpeed + 'px';
+                    }
+                },20);
+            }
+
+            oInp.onclick = function () {
+                startMove(300);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="开始运动">
+    <div id="div1"></div>
+</body>
+</html>

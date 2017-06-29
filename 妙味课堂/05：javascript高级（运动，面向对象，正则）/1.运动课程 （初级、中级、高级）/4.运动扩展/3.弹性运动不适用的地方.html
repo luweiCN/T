@@ -1,0 +1,56 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 20px;
+            background: red;
+        }
+    </style>
+
+    <script>
+        /*
+        * 弹性运动：如果在某些地方过界会出问题的时候，弹性运动就不适用
+        * */
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+
+            oDiv.onmouseover = function () {
+                startMove(oDiv, 200);
+            }
+
+            oDiv.onmouseout = function () {
+                startMove(oDiv, 20);
+            }
+        }
+
+        var height = 20;
+        var iSpeed = 0;
+
+        function startMove (obj, iTarget){
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function () {
+                iSpeed += (iTarget - obj.offsetHeight) / 5;
+                iSpeed *= 0.7;
+
+                if(Math.abs(iSpeed) < 1 && Math.abs(iTarget - height) < 1){
+                    clearInterval(timer);
+                    obj.style.height = iTarget + 'px';
+                } else {
+                    if (height < 0){
+                        height = 0;
+                    }
+                    height += iSpeed;
+                    obj.style.height = height + 'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

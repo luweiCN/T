@@ -1,0 +1,33 @@
+#qbd-list .list-content ul{
+    height: 1500px;
+}
+
+#qbd-list .list-control{
+    width: 1100px;
+    height: 35px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#qbd-list .list-control ul{
+    height: 33px;
+    margin: 0px auto;
+}
+
+#qbd-list .list-control ul li{
+    border: 1px solid #d1d1d1;
+    height: 33px;
+    padding: 5px 18px;
+    margin: 0 8px;
+    cursor: pointer;
+    display: inline;
+}
+
+#qbd-list .list-control ul li a{
+    color: #000000;
+}
+
+#qbd-list .list-control ul li a:hover{
+    color: #d51b00;
+    text-decoration: none;
+}

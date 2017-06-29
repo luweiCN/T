@@ -1,0 +1,15 @@
+1.所有的文字a标签样式一样：鼠标移入蓝色背景，白色字体
+
+2.text-overflow省略号样式语法结构 text-overflow语法：
+    text-overflow : clip | ellipsis text-overflow
+参数值和解释：
+clip : 　不显示省略标记（...），而是简单的裁切
+ellipsis : 　当对象内文本溢出时显示省略标记（...）
+text-overflow
+应用说明：
+CSS text-overflow设置或检索是否使用一个省略号标记（...）标示对象内文本文字的溢出。 要想实现显示不完内容将显示省略号代替，还需要html nobr标签完成（nobr禁止换行标签）
+
+
+<nobr>
+即使浏览器的横幅不够，这里也不会换行。
+</nobr>

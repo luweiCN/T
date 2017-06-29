@@ -1,0 +1,73 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1{
+            width: 366px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #ul1 li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            border: 1px solid black;
+            float: left;
+            margin: 10px;
+            z-index: 1;
+        }
+    </style>
+
+    <script src="move2.js"></script>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('ul1');
+            var aLi = oUl.getElementsByTagName('li');
+            var iMinZindex = 2;
+
+            //把css的浮动布局转换成绝对定位的布局
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].style.left = aLi[i].offsetLeft + 'px';
+                aLi[i].style.top = aLi[i].offsetTop + 'px';
+            }
+            for (var i=0; i<aLi.length; i++){  //这两个循环必须分开，否则会出问题
+                aLi[i].style.position = 'absolute';
+                aLi[i].style.margin = '0';
+            }
+
+            //给li加事件
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].onmouseover = function(){
+                    this.style.zIndex = iMinZindex++;  //层级的处理，鼠标每次移入zindex都会增大一次
+                    startMove(this, {'width':200, 'height':200, 'marginTop':-50, 'marginLeft':-50});
+                }
+
+                aLi[i].onmouseout = function(){
+                    this.style.zIndex = 1;
+                    startMove(this, {'width':100, 'height':100, 'marginTop':0, 'marginLeft':0});
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

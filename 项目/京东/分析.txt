@@ -1,0 +1,81 @@
+1.主要使用
+HTML、CSS、JS、Jquery
+2.重要点：
+    css reset
+    CSS Sprites
+    定位
+    margin负值的妙用
+    tab选项卡
+    轮播图
+    倒计时
+    Jquery插件开发
+
+
+
+    1.border-radius可以同时设置1到4个值。如果设置1个值，表示4个圆角都使用这个值。如果设置两个值，表示左上角和右下角使用第一个值，右上角和左下角使用第二个值。如果设置三个值，表示左上角使用第一个值，右上角和左下角使用第二个值，右下角使用第三个值。如果设置四个值，则依次对应左上角、右上角、右下角、左下角（顺时针顺序）。
+    css圆角详解:http://www.ruanyifeng.com/blog/2010/12/detailed_explanation_of_css3_rounded_corners.html
+
+    2.1、常用id的命名：
+
+      (1)页面结构
+
+      - 容器: container
+      - 页头：header
+      - 内容：content/container
+      - 页面主体：main
+      - 页尾：footer
+      - 导航：nav
+      - 侧栏：sidebar
+      - 栏目：column
+      - 页面外围控制整体布局宽度：wrapper
+      - 左右中：left right center
+
+      (2)导航
+
+
+      - 导航：nav
+      - 主导航：mainbav
+      - 子导航：subnav
+      - 顶导航：topnav
+      - 边导航：sidebar
+      - 左导航：leftsidebar
+      - 右导航：rightsidebar
+      - 菜单：menu
+      - 子菜单：submenu
+      - 标题: title
+      - 摘要: summary
+
+      (3)功能
+
+
+      - 标志：logo
+      - 广告：banner
+      - 登陆：login
+      - 登录条：loginbar
+      - 注册：regsiter
+      - 搜索：search
+      - 功能区：shop
+      - 标题：title
+      - 加入：joinus
+      - 状态：status
+      - 按钮：btn
+      - 滚动：scroll
+      - 标签页：tab
+      - 文章列表：list
+      - 提示信息：msg
+      - 当前的: current
+      - 小技巧：tips
+      - 图标: icon
+      - 注释：note
+      - 指南：guild
+      - 服务：service
+      - 热点：hot
+      - 新闻：news
+      - 下载：download
+      - 投票：vote
+      - 合作伙伴：partner
+      - 友情链接：link
+      - 版权：copyright
+
+
+      3.z-index没搞清楚

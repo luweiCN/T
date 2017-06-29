@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>数据管理后台</title>
+<tpl>include file ='include.html'</tpl>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script type="application/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script language="JavaScript" src="./js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./css/push.css">
+
+</head>
+<body>
+<tpl>include file ='common.html'</tpl>
+<div id="m_max" style="width:1200px;margin-right: auto;margin-left: auto">
+    <div class="panel panel-default" >
+        <div class="panel-heading">极光推送</div>
+      </div>
+      <form class="form-horizontal"  method="post" action="push.php">
+    <fieldset>
+      <div id="legend" class="">
+        <legend class="">推送详情</legend>
+      </div>
+        <ul class="nav nav-pills center-block">
+            <li>
+                <input type="button" value="书单推送" class="btn btn-primary">
+            </li>
+            <li>
+                <input type="button" value="任务推送" class="btn btn-primary">
+            </li>
+            <li>
+                <input type="button" value="H5活动页推送" class="btn btn-primary">
+            </li>
+            <li>
+                <input type="button" value="文档阅读界面推送" class="btn btn-primary">
+            </li>
+            <li>
+                <input type="button" value="道客圈推送" class="btn btn-primary">
+            </li>
+            <li>
+                <input type="button" value="个人主页推送" class="btn btn-primary">
+            </li>
+            <li>
+                <input type="button" value="私信聊天界面推送" class="btn btn-primary">
+            </li>
+        </ul>
+        <br />
+
+        <div class="tab-content">
+            <div class="tab-pane active">
+                <div class="form-group">
+
+                    <!-- 文本输入 -->
+                    <label class="control-label col-md-3" for="input01">标题1</label>
+                    <div class="controls col-md-6">
+                        <input type="text" placeholder="标题" class="form-control" name="title">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <!-- 文本区域 -->
+                    <label class="control-label col-md-3">推送内容</label>
+                    <div class="controls col-md-6">
+                        <div class="textarea">
+                            <textarea type="" class="form-control" name="message"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送类型</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="类型" name="type" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送URL</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="URL" name="url" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label  col-md-3">单行多选项目</label>
+
+                    <!-- 单行多选项目 -->
+                    <div class="controls  col-md-6">
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="android" name="android"> android
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="ios" name="ios"> ios
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="windows phone" name="windows phone"> windows phone
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="all" name="all"> all
+                        </label>
+                    </div>
+
+                </div><div class="form-group">
+                <!--                       <label class="control-label col-md-3 valtype" data-valtype="label">确认</label> -->
+
+                <!-- 按钮 -->
+                <div class="controls col-md-offset-3 col-md-6">
+                    <!--   <button class="btn btn-success" onClick="postData()">确认</button>	-->
+                    <input type="submit" class="btn btn-success" value="点击提交">
+                </div>
+            </div>
+            </div>
+
+            <div class="tab-pane">
+                <div class="form-group">
+
+                    <!-- 文本输入 -->
+                    <label class="control-label col-md-3" for="input01">标题2</label>
+                    <div class="controls col-md-6">
+                        <input type="text" placeholder="标题" class="form-control" name="title">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <!-- 文本区域 -->
+                    <label class="control-label col-md-3">推送内容</label>
+                    <div class="controls col-md-6">
+                        <div class="textarea">
+                            <textarea type="" class="form-control" name="message"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送类型</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="类型" name="type" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送URL</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="URL" name="url" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label  col-md-3">单行多选项目</label>
+
+                    <!-- 单行多选项目 -->
+                    <div class="controls  col-md-6">
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="android" name="android"> android
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="ios" name="ios"> ios
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="windows phone" name="windows phone"> windows phone
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="all" name="all"> all
+                        </label>
+                    </div>
+
+                </div><div class="form-group">
+                <!--                       <label class="control-label col-md-3 valtype" data-valtype="label">确认</label> -->
+
+                <!-- 按钮 -->
+                <div class="controls col-md-offset-3 col-md-6">
+                    <!--   <button class="btn btn-success" onClick="postData()">确认</button>	-->
+                    <input type="submit" class="btn btn-success" value="点击提交">
+                </div>
+            </div>
+            </div>
+            <div class="tab-pane">
+                <div class="form-group">
+
+                    <!-- 文本输入 -->
+                    <label class="control-label col-md-3" for="input01">标题3</label>
+                    <div class="controls col-md-6">
+                        <input type="text" placeholder="标题" class="form-control" name="title">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <!-- 文本区域 -->
+                    <label class="control-label col-md-3">推送内容</label>
+                    <div class="controls col-md-6">
+                        <div class="textarea">
+                            <textarea type="" class="form-control" name="message"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送类型</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="类型" name="type" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送URL</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="URL" name="url" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label  col-md-3">单行多选项目</label>
+
+                    <!-- 单行多选项目 -->
+                    <div class="controls  col-md-6">
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="android" name="android"> android
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="ios" name="ios"> ios
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="windows phone" name="windows phone"> windows phone
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="all" name="all"> all
+                        </label>
+                    </div>
+
+                </div><div class="form-group">
+                <!--                       <label class="control-label col-md-3 valtype" data-valtype="label">确认</label> -->
+
+                <!-- 按钮 -->
+                <div class="controls col-md-offset-3 col-md-6">
+                    <!--   <button class="btn btn-success" onClick="postData()">确认</button>	-->
+                    <input type="submit" class="btn btn-success" value="点击提交">
+                </div>
+            </div>
+            </div>
+
+            <div class="tab-pane">
+                <div class="form-group">
+
+                    <!-- 文本输入 -->
+                    <label class="control-label col-md-3" for="input01">标题4</label>
+                    <div class="controls col-md-6">
+                        <input type="text" placeholder="标题" class="form-control" name="title">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <!-- 文本区域 -->
+                    <label class="control-label col-md-3">推送内容</label>
+                    <div class="controls col-md-6">
+                        <div class="textarea">
+                            <textarea type="" class="form-control" name="message"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送类型</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="类型" name="type" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送URL</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="URL" name="url" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label  col-md-3">单行多选项目</label>
+
+                    <!-- 单行多选项目 -->
+                    <div class="controls  col-md-6">
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="android" name="android"> android
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="ios" name="ios"> ios
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="windows phone" name="windows phone"> windows phone
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="all" name="all"> all
+                        </label>
+                    </div>
+
+                </div><div class="form-group">
+                <!--                       <label class="control-label col-md-3 valtype" data-valtype="label">确认</label> -->
+
+                <!-- 按钮 -->
+                <div class="controls col-md-offset-3 col-md-6">
+                    <!--   <button class="btn btn-success" onClick="postData()">确认</button>	-->
+                    <input type="submit" class="btn btn-success" value="点击提交">
+                </div>
+            </div>
+            </div>
+
+            <div class="tab-pane">
+                <div class="form-group">
+
+                    <!-- 文本输入 -->
+                    <label class="control-label col-md-3" for="input01">标题5</label>
+                    <div class="controls col-md-6">
+                        <input type="text" placeholder="标题" class="form-control" name="title">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <!-- 文本区域 -->
+                    <label class="control-label col-md-3">推送内容</label>
+                    <div class="controls col-md-6">
+                        <div class="textarea">
+                            <textarea type="" class="form-control" name="message"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送类型</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="类型" name="type" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送URL</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="URL" name="url" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label  col-md-3">单行多选项目</label>
+
+                    <!-- 单行多选项目 -->
+                    <div class="controls  col-md-6">
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="android" name="android"> android
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="ios" name="ios"> ios
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="windows phone" name="windows phone"> windows phone
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="all" name="all"> all
+                        </label>
+                    </div>
+
+                </div><div class="form-group">
+                <!--                       <label class="control-label col-md-3 valtype" data-valtype="label">确认</label> -->
+
+                <!-- 按钮 -->
+                <div class="controls col-md-offset-3 col-md-6">
+                    <!--   <button class="btn btn-success" onClick="postData()">确认</button>	-->
+                    <input type="submit" class="btn btn-success" value="点击提交">
+                </div>
+            </div>
+            </div>
+
+            <div class="tab-pane">
+                <div class="form-group">
+
+                    <!-- 文本输入 -->
+                    <label class="control-label col-md-3" for="input01">标题6</label>
+                    <div class="controls col-md-6">
+                        <input type="text" placeholder="标题" class="form-control" name="title">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <!-- 文本区域 -->
+                    <label class="control-label col-md-3">推送内容</label>
+                    <div class="controls col-md-6">
+                        <div class="textarea">
+                            <textarea type="" class="form-control" name="message"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送类型</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="类型" name="type" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送URL</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="URL" name="url" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label  col-md-3">单行多选项目</label>
+
+                    <!-- 单行多选项目 -->
+                    <div class="controls  col-md-6">
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="android" name="android"> android
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="ios" name="ios"> ios
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="windows phone" name="windows phone"> windows phone
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="all" name="all"> all
+                        </label>
+                    </div>
+
+                </div><div class="form-group">
+                <!--                       <label class="control-label col-md-3 valtype" data-valtype="label">确认</label> -->
+
+                <!-- 按钮 -->
+                <div class="controls col-md-offset-3 col-md-6">
+                    <!--   <button class="btn btn-success" onClick="postData()">确认</button>	-->
+                    <input type="submit" class="btn btn-success" value="点击提交">
+                </div>
+            </div>
+            </div>
+
+            <div class="tab-pane">
+                <div class="form-group">
+
+                    <!-- 文本输入 -->
+                    <label class="control-label col-md-3" for="input01">标题7</label>
+                    <div class="controls col-md-6">
+                        <input type="text" placeholder="标题" class="form-control" name="title">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <!-- 文本区域 -->
+                    <label class="control-label col-md-3">推送内容</label>
+                    <div class="controls col-md-6">
+                        <div class="textarea">
+                            <textarea type="" class="form-control" name="message"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送类型</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="类型" name="type" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <!-- 前置文本 -->
+                    <label class="control-label col-md-3">推送URL</label>
+                    <div class="controls col-md-6">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon">^_^</span>
+                            <input class="span2 form-control" placeholder="URL" name="url" type="text">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label  col-md-3">单行多选项目</label>
+
+                    <!-- 单行多选项目 -->
+                    <div class="controls  col-md-6">
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="android" name="android"> android
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="ios" name="ios"> ios
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="windows phone" name="windows phone"> windows phone
+                        </label>
+                        <label class="checkbox checkbox-inline">
+                            <input type="checkbox" value="all" name="all"> all
+                        </label>
+                    </div>
+
+                </div><div class="form-group">
+                <!--                       <label class="control-label col-md-3 valtype" data-valtype="label">确认</label> -->
+
+                <!-- 按钮 -->
+                <div class="controls col-md-offset-3 col-md-6">
+                    <!--   <button class="btn btn-success" onClick="postData()">确认</button>	-->
+                    <input type="submit" class="btn btn-success" value="点击提交">
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+    </fieldset>
+  </form>
+</div>
+
+</div>
+
+</body>
+
+<script>
+    
+    $(function () {
+        $('.nav input').click(function () {
+            var i = $(this).index('input.btn'); //获取当前按钮的索引值
+            $('div.tab-pane').removeClass('active')  //把所以的选项卡面板隐藏
+            $('div.tab-pane').eq(i).addClass('active');  //根据索引值让对应的面板显示
+        });
+    });
+
+$('.dropdown-toggle').dropdown()
+//加载文档列表
+function getRecordContent(url){
+window.location.href=url;
+}
+
+function postData(){
+	alert('123');
+}
+
+</script>
+</html>

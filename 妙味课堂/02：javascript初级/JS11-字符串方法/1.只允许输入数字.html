@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+//        charCodeAt()方法可以获取字符串中字符的unicode编码
+//        数字0~9：48~57
+//        a~z：97~122
+//        A~Z：65~90
+
+        window.onload = function(){
+            var aInp = document.getElementsByTagName('input');
+
+            function detecNum(str){
+                var len = str.length;
+                var n =0;
+                for(var i=0; i<len; i++){
+                    n = str.charCodeAt(i);
+                    if(n>57 || n<48){
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            aInp[1].onclick = function(){
+                if(detecNum(aInp[0].value)){
+                    alert('输入正确');
+                } else {
+                    alert('只能输入数字');
+                }
+            };
+
+        };
+    </script>
+</head>
+<body>
+    <input type="text" />
+    <input type="button" value="检测">
+</body>
+</html>

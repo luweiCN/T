@@ -1,0 +1,70 @@
+html{
+    background: #ffffff;
+    color: #000;
+}
+
+body{
+    font: 12px/1.5 Arial,宋体;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover{
+    color: #c00;
+}
+
+img, fieldset{
+    border: none;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+iframe{
+    display: block;
+    border: none;
+}
+
+li,dd{
+    list-style: none;
+}
+
+.block{
+    display: block;
+}
+
+.fLeft{
+    float: left;
+}
+
+.fRight{
+    float: right;
+}
+
+.clear:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.clear{
+    zoom: 1
+}
+
+input{
+
+}
+
+h1,h2{
+    
+}

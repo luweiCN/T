@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>for的图片生成应用</title>
+    
+    <style>
+        ul,li{margin: 0; padding: 0;}
+
+        #bg{
+            width:510px;
+            height:510px;
+            background: url("./img/pic.jpg");
+        }
+        a:hover{background: none;}
+    </style>
+
+    <script>
+        window.onload = function (){
+            var oBg = document.getElementById('bg');
+
+            for(var i=0; i<100; i++){
+                oBg.innerHTML += '<div style ="width:50px; height:50px; background: #f1f1f1; border-bottom: 1px solid #fff; border-right: 1px solid #fff; float: left;" onmouseover="this.style.cssText=\'width:50px; height:50px; background:none; border-bottom: 1px solid #fff; border-right: 1px solid #fff; float: left;\'"></div>';
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="bg"></div>
+</body>
+</html>

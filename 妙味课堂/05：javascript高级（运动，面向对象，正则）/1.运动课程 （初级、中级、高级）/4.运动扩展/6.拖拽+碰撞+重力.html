@@ -1,0 +1,105 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+        div{
+            width: 3px;
+            height: 3px;
+            background: black;
+            position: absolute;
+        }
+    </style>
+    <script>
+        var iSpeedX = 0;
+        var iSpeedY =0;
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var lastX = 0;
+            var lastY = 0;
+
+            oDiv.onmousedown = function (ev) {
+                ev = ev || event;
+
+                var disX = ev.clientX - oDiv.offsetLeft;
+                var disY = ev.clientY - oDiv.offsetTop;
+
+                document.onmousemove = function (ev) {
+                    ev = ev || event;
+
+                    var L = ev.clientX - disX;
+                    var T = ev.clientY -disY;
+
+                    oDiv.style.left = L + 'px';
+                    oDiv.style.top = T + 'px';
+
+                    iSpeedX = L - lastX;
+                    iSpeedY = T - lastY;
+
+                    lastX = L;
+                    lastY = T;
+                }
+
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                    startMove(oDiv);
+                }
+            }
+        }
+
+        function startMove (obj) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                iSpeedY += 3; //加上重力
+                var L = obj.offsetLeft + iSpeedX;
+                var T = obj.offsetTop + iSpeedY;
+
+
+                if(T > document.documentElement.clientHeight - obj.offsetHeight){
+                    iSpeedY *= -0.8;
+                    iSpeedX *= 0.8;
+                    T = document.documentElement.clientHeight - obj.offsetHeight;
+                } else if(T < 0){
+                    iSpeedY *= -1;
+                    iSpeedX *= 0.8;
+                    T = 0;
+                }
+
+
+                if(L > document.documentElement.clientWidth - obj.offsetWidth){
+                    iSpeedX *= -0.8;
+                    L = document.documentElement.clientWidth - obj.offsetWidth;
+                } else if(L < 0){
+                    iSpeedX *= -0.8;
+                    L = 0;
+                }
+
+                if(Math.abs(iSpeedX) < 1){
+                    iSpeedX = 0;
+                }
+
+                if(Math.abs(iSpeedY) < 1){
+                    iSpeedY = 0;
+                }
+
+                if(iSpeedX ==0 && iSpeedY == 0 && T == ocument.documentElement.clientHeight - obj.offsetHeight){
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.left = L + 'px';
+                    obj.style.top = T + 'px';
+                }
+            },30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

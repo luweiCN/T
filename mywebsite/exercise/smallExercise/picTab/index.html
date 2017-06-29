@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>带缩略图的图片轮换</title>
+
+    <style>
+        body,h1,img,ul,li{margin: 0; padding: 0; border: none;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+        body{background: url("./img1/bg.jpg") no-repeat;}
+        h1{color: #fff;}
+
+        .bg{width: 800px; height: 1000px; margin: 150px auto 50px; position: relative;}
+        .pic{width: 800px; height: 600px; position: relative;}
+        #btnL{position: absolute; top: 300px; left: 20px; filter:alpha(opacity:50); opacity: 0.5;}
+        #btnR{position: absolute; top: 300px; right: 20px; filter:alpha(opacity:50); opacity: 0.5;}
+
+        ul{width: 600px; margin: 10px auto;}
+        a{display: inline-block; position: relative; margin: 0 3px 0; }
+        .btn{width: 295px; height: 200px; position: absolute; left: 50%; bottom: 280px; margin-left: -150px;}
+        #small{width: 180px; height: 155px; background: url("./img1/3.png") no-repeat bottom center; position: absolute;
+            display: none; }
+        #smallPic{width: 160px; height: 120px; border: 10px solid #fff;}
+        #dot{width: 134px; height: 40px; position: absolute; bottom: 0; left: 50%; margin-left: -68px;}
+    </style>
+
+    <script>
+        window.onload = function (){
+            var oImg = document.getElementById('img');
+            var oBtn1 = document.getElementById('btnL');
+            var oBtn2 = document.getElementById('btnR');
+            var oSmall = document.getElementById('small');
+            var oSpic = document.getElementById('smallPic');
+            var aBtn = document.getElementsByTagName('a');
+            var oDot = document.getElementById('dot');
+            var aPic = oDot.getElementsByTagName('img');
+
+            var aUrl = ['./img1/1.jpg','./img1/2.jpg','./img1/3.jpg','./img1/4.jpg','./img1/5.jpg'];
+            var aBt = ['./img1/1.png','./img1/2.png'];
+            var count = 0;
+
+            for(var i=0; i<aUrl.length; i++){
+                aBtn[i].index = i;
+
+                aBtn[i].onmousemove = function () {
+                    oSmall.style.display = 'block';
+                    oSmall.style.left = this.index * 28 + 'px';
+                    oSpic.src = aUrl[this.index];
+
+                };
+
+                aBtn[i].onmouseout = function (){
+                    oSmall.style.display = 'none';
+                };
+
+                aBtn[i].onclick = function (){
+                    oImg.src = aUrl[this.index];
+                    count = this.index;
+                    for(var j=0; j<aUrl.length; j++){
+                        aPic[j].src = aBt[0];
+                    }
+                    aPic[this.index].src = aBt[1];
+                };
+            }
+
+            oBtn1.onmousemove = function (){
+                oBtn1.style.opacity = 1;
+            };
+            oBtn1.onmouseout= function (){
+                oBtn1.style.opacity = 0.5;
+            };
+            oBtn1.onclick = function (){
+                if(count == 0){
+                    count = aUrl.length - 1;
+                    oImg.src = aUrl[count];
+                } else{
+                    count--;
+                    oImg.src = aUrl[count];
+                }
+            };
+
+            oBtn2.onmousemove = function (){
+                oBtn2.style.opacity = 1;
+            };
+            oBtn2.onmouseout= function (){
+                oBtn2.style.opacity = 0.5;
+            };
+            oBtn2.onclick = function (){
+                if(count == aUrl.length-1){
+                    count = 0;
+                    oImg.src = aUrl[count];
+                } else{
+                    count++;
+                    oImg.src = aUrl[count];
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+<div class="bg">
+    <h1>带缩略图的图片轮换</h1>
+    <div class="pic">
+        <img id="img" src="./img1/1.jpg">
+        <img id="btnL" src="./img1/left.png">
+        <img id="btnR" src="./img1/right.png">
+    </div>
+    <div class="btn">
+        <div id="small" class="small"><img id="smallPic" src="./img1/1.jpg"></div>
+        <div id="dot">
+            <a href="#"><img src="./img1/2.png"></a>
+            <a href="#"><img src="./img1/1.png"></a>
+            <a href="#"><img src="./img1/1.png"></a>
+            <a href="#"><img src="./img1/1.png"></a>
+            <a href="#"><img src="./img1/1.png"></a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

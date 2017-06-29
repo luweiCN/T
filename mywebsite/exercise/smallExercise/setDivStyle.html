@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+		dl,dd,li{margin: 0; padding: 0; list-style: none;}
+		a{text-decoration: none;}
+
+		.clear{zoom: 1;}
+		.clear:after{content: ""; display: block; clear: both;}
+
+		dd,dt,li{float: left; line-height: 32px;}
+		html,body{background: #efefef; width: 100%; height: 100%; font-family: 黑体;}
+		strong,span{font-size: 22px; line-height: 40px;}
+		strong{display: inline-block; margin: 0 0 0 20px;}
+		span{font-size: 12px;display: inline-block; width: 100px; height: 40px; text-align: center; background: red; color: white;}
+		#DIV{width: 100px; height: 100px; border: 4px solid #393129; background: #ffffff; margin: 20px;}
+		#bg{width: 100%; height: 100%; background: #000; position: absolute; top: 0; left: 0; opacity: 0.7; display: none;}
+		#set{width: 300px; height: 200px; background: white; border:20px solid #888887; position: relative; top: 50%; left: 50%; margin-top: -102px; margin-left: -152px; }
+		dl a{display: inline-block; width: 36px; height: 32px; margin-left: 5px; text-align: center; line-height: 32px;}
+		#red{background: #ff4646; color: white;}
+		#red:hover{background: red; border: 1px solid #000;}
+		#yellow{background: #d2db3a; color: white;}
+		#yellow:hover{background: yellow; color: #000; border: 1px solid #000;}
+		#blue{background: #467aff; color: white;}
+		#blue:hover{background: blue; border: 1px solid #000;}
+		#lis{margin: 10px auto 0; position: relative; left: 10px;}
+		ul span{display: inline-block; width: 60px; height: 30px; border:1px solid #05203b; background: #002459; color: white; text-align: center; line-height: 30px;margin: 2px;}
+		ul{position: relative; top: -20%; left: 15%;}
+		a{background: #ebebea; border:1px solid #c1c1c0;}
+		dd a:hover{background: #e39b00; border: 1px solid #000;}
+	</style>
+
+	<script type="text/javascript">
+	window.onload = function (){
+			var s_Btn = document.getElementById('sBtn');
+			var bg_show = document.getElementById('bg');
+			var res = document.getElementById('reset');
+			var ye = document.getElementById('yes');
+			var di = document.getElementById('DIV');
+			var red = document.getElementById('red');
+			var yellow = document.getElementById('yellow');
+			var blue = document.getElementById('blue');
+			var w2 = document.getElementById('w200');
+			var w3 = document.getElementById('w300');
+			var w4 = document.getElementById('w400');
+			var h2 = document.getElementById('h200');
+			var h3 = document.getElementById('h300');
+			var h4 = document.getElementById('h400');
+
+			s_Btn.onclick = function (){
+				bg_show.style.display = 'block';
+			};
+
+			ye.onclick = function (){
+				bg_show.style.display = 'none';
+			};
+
+			res.onclick = function (){
+				di.style.width = '100px';
+				di.style.height = '100px';
+				di.style.background = 'white';
+			};
+
+			red.onclick = function (){
+				di.style.background = 'red';
+			};
+
+			yellow.onclick = function (){
+				di.style.background = 'yellow';
+			};
+
+			blue.onclick = function (){
+				di.style.background = 'blue';
+			};
+
+			w2.onclick = function (){
+				di.style.width = '200px';
+			};
+
+			w3.onclick = function (){
+				di.style.width = '300px';
+			};
+
+			w4.onclick = function (){
+				di.style.width = '400px';
+			};
+
+			h2.onclick = function (){
+				di.style.height = '200px';
+			};
+
+			h3.onclick = function (){
+				di.style.height = '300px';
+			};
+
+			h4.onclick = function (){
+				di.style.height = '400px';
+			};
+	};
+	</script>
+</head>
+<body>
+	
+	<strong>请为下面的DIV设置样式：</strong>
+	<span id="sBtn">点击设置</span>
+	<div id="DIV"></div>
+	<div id="bg">
+		<div id="set">	
+			<div id="lis">
+				<dl class="clear">
+					<dt>请选择背景色：</dt>
+						<dd><a id="red" href="#">红</a></dd>
+						<dd><a id="yellow" href="#">黄</a></dd>
+						<dd><a id="blue" href="#">蓝</a></dd>
+				</dl>
+				<br />
+
+				<dl class="clear">
+					<dt id="width">请选择宽(px)：</dt>
+						<dd><a id="w200" href="#">200</a></dd>
+						<dd><a id="w300" href="#">300</a></dd>
+						<dd><a id="w400" href="#">400</a></dd>
+				</dl>
+				<br />
+
+				<dl class="clear">
+					<dt>请选择高(px)：</dt>
+						<dd><a id="h200" href="#">200</a></dd>
+						<dd><a id="h300" href="#">300</a></dd>
+						<dd><a id="h400" href="#">400</a></dd>
+				</dl>
+				<br />
+			</div>
+			<ul class="clear">
+				<li><span id="reset">恢复</span></li>
+				<li><span id="yes">确定</span></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

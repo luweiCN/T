@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/***********css reset***********/
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,th,td,select{margin: 0; padding: 0;}
+em{font-style: normal;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: 0; vertical-align: top;}
+table{border-collapse: collapse;}
+textarea{resize: none;overflow: auto;}
+/***********css reset end***********/
+
+/***********css public***********/
+body{
+	background: url(../img/bg.gif) repeat-x #d9e2ce;
+	min-width: 960px;
+}
+
+.wrap{
+	width: 960px;
+	margin:0 auto;
+}
+
+#header{
+	background: url(../img/head_bg.jpg) no-repeat center 0; 
+}
+
+.header{
+	height: 94px;
+}
+
+#nav{
+	height: 43px;
+	background: url(../img/nav_bg.png) no-repeat;
+}
+
+#nav li{
+	float: left;
+	width: 118px;
+	padding-right: 8px;
+}
+
+#nav a{
+	display: block;
+	height: 43px;
+	font-size: 16px;
+	line-height: 42px;
+	padding-top: 1px;
+	color: #fdfbf9;	
+	text-align: center;
+}
+
+#nav a:hover, #nav .active{
+	background: url(../img/nav_hover.png) no-repeat center 0;
+}
+
+/***********css public end***********/
+
+/***********css index***********/
+
+/***********css index end***********/
+
+/***********css product***********/
+
+/***********css productc end***********/
+
+/***********css room***********/
+
+/***********css room end***********/

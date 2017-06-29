@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+//        str.charAt() 可以获取字符串中指定位置的字符
+//        str.charCodeAt()  可以获取字符串中指定位置的字符所对应的unicode编码
+//        String.fromCharCode()可以从unicode编码值得到所对应的字符
+
+        window.onload = function(){
+            var aInp = document.getElementsByTagName('input');
+            var oDiv = document.getElementById('div1');
+
+            aInp[1].onclick = function() {
+                var str = aInp[0].value;
+                var str1 = '';
+                for(var i=0; i<str.length; i++){
+                    str1 += String.fromCharCode(str.charCodeAt(i)-520);  //这里减的数字就是我们的“加密算法”
+                }
+                oDiv.innerHTML = str1;
+            }
+
+        };
+    </script>
+</head>
+<body>
+<input type="text" />
+<input type="button" value="加密" />
+<div id="div1">加密...</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+//        一个主函数里面有很多层回调函数 最里面的回调函数 执行了一个return  那么这个return的返回值是属于最外层的函数吗
+        var x= 1;
+        var y=3;
+
+        function a(callback){
+            return callback;
+        }
+
+        var c = a(function () {
+
+            return a(function () {
+                return x+y;
+            }());
+        }());
+
+
+        alert(c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

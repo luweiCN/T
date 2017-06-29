@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+/*
+        alert(new Date()); //当前系统的（当前运行到这一行代码的计算机的时间）时间对象
+        new Date()的类型是对象
+
+        以下所以的类型是数字
+        new Date().getFullYear()  得到当前年份
+        new Date().getMonth()     得到当前月份，一月份为0
+        new Date().getDate()      得到当前是多少号
+        new Date().getDay()       得到当前是星期几，数字显示如：5
+        new Date().getHours()     得到当前的小时数
+        new Date().getMinutes()   得到当前的分钟数
+        new Date().getSeconds()    得到当前的秒数
+*/
+
+
+        window.onload = function(){
+
+            FnTime();
+            setInterval(FnTime, 1000);
+
+
+            function FnTime(){
+                var myTime = new Date();
+                var iYear = myTime.getFullYear();
+                var iMonth = myTime.getMonth();
+                var iDate = myTime.getDate();
+                var iDay = myTime.getDay();
+                var iHours = myTime.getHours();
+                var iMinutes = myTime.getMinutes();
+                var iSeconds = myTime.getSeconds();
+                var oBody = document.body;
+
+                var iWeek = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'];
+
+                var str = iYear + '年' + iMonth + 1 + '月' + iDate + '日  ' + iWeek[iDay - 1] + ' ' + toTwo(iHours) + ' : ' + toTwo(iMinutes) + ' : ' + toTwo(iSeconds);
+
+
+                oBody.innerHTML = str;
+            }
+        };
+
+        function toTwo(n){
+            return n<10? '0' + n: '' + n;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

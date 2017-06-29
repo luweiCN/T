@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        function fn(data){
+            alert(data);
+        }
+    </script>
+    <!--<script src="2.txt"></script>-->
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function () {
+                //当按钮点击的时候再去加载远程资源让它执行
+                var oScript = document.createElement('script');
+                oScript.src = '2.txt';
+                document.body.appendChild(oScript);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="按钮">
+    JSONP：json with padding
+    1.script标签
+    2.用script加载资源是没有跨域问题的
+
+    在资源加载进来之前加载一个函数，这个函数接收一个参数（数据），函数里面利用这个参数做一些事情
+    然后需要的的时候通过script标签加载对应的远程文件资源，当远程文件被加载进来的时候，就会去执行我们之前定义好的函数，并且把数据当作这个函数的参数传入进去
+</body>
+</html>

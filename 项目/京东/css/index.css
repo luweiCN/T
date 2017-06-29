@@ -1,0 +1,2192 @@
+/*顶部区域*/
+#publicTop{
+    width: 100%;
+    height: 31px;
+    background: url("../images/publicTopBg.gif") repeat-x;
+}
+
+#publicTop #shortCut{
+    width: 1210px;
+    height: 30px;
+    margin: 0 auto;
+    line-height: 30px;
+}
+
+#publicTop #shortCut li{
+    float: left;
+    background: url("../images/liBg.gif") no-repeat ;
+}
+
+#publicTop #shortCut li.noBg{
+    background: none;
+}
+
+#publicTop #shortCut dt{
+    padding: 0 10px 0 0 ;
+}
+
+#publicTop #shortCut dd{
+    position: relative;
+    z-index: 999;
+    height: 115px;
+    background: #ffffff;
+}
+
+#publicTop #shortCut p{
+    height: 15px;
+}
+
+#publicTop #shortCut li a{
+    padding: 0 8px;
+}
+
+#publicTop .iconLi .iconStar{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url("../images/iconStar.gif") no-repeat;
+    margin-right: 4px;
+}
+
+#publicTop #shortCut dt{
+    position: relative;
+}
+
+#publicTop #shortCut .iconDownDrop{
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    right: 4px;
+    width: 10px;
+    height: 10px;
+    background: url("../images/downDrop.gif") no-repeat;
+    margin: 0px 0 0 0;
+}
+/*顶部区域结束*/
+
+/*头部区域*/
+#header{
+    width: 1210px;
+    height: 90px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#header .headerLogo{
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 0;
+}
+
+#header .headerAd{
+    display: block;
+    position: absolute;
+    top: 23px;
+    left: 182px;
+}
+
+#header .search{
+    width: 500px;
+    height: 54px;
+    position: absolute;
+    top: 19px;
+    left: 350px;
+}
+
+#header .search .searchBar input{
+    width: 494px;
+    height: 30px;
+    line-height: 30px;
+    border: 3px solid #d90000;
+    border-radius: 4px;
+    color: #999999;
+}
+
+#header .search .searchBtn{
+    width: 78px;
+    height: 30px;
+    background: url("../images/searchBtnBg.gif") repeat-x;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+#header .search .searchBtn a{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    width: 78px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+#header .search a:hover{
+    color: #c81623;
+}
+
+#header .search p{
+    float: left;
+    padding-left: 11px;
+}
+
+#header .search ul, #header .search ul a{
+    color: #999999;
+}
+
+#header .headerBtn{
+    height: 25px;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+    position: absolute;
+    top: 27px;
+    line-height: 25px;
+    padding-top: 1px;
+    padding-left: 5px;
+    z-index: 1000;
+    background: url("../images/hearderBtnBg.gif") repeat-x;
+    /*border-radius: 3px 3px 0 0;*/
+    /*background: #ffffff;*/
+    /*border-bottom: none;*/
+    /*鼠标移入时的样式*/
+}
+
+#header .myJd{
+    width: 108px;
+    right: 143px;
+}
+
+#header .shoppingCar{
+    right: 0px;
+    width: 129px;
+}
+
+#header .headerBtn .headerIcon{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+#header .myJd .iconMyJd{
+    background: url("../images/iconMyJD.gif") no-repeat;
+}
+
+#header .shoppingCar .iconSc{
+    background: url("../images/shopingCar.gif") no-repeat;
+}
+
+#header .headerBtn a.myJdbtnText{
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 26px;
+}
+
+#header .headerBtn .iconDownDrop{
+    display: block;
+    width: 7px;
+    height: 4px;
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    background: url("../images/downDrop.gif") no-repeat;
+}
+
+#header .headerBtnCon{
+    position: absolute;
+    /*z-index: 10;*/
+    top: 53px;
+    z-index: 2;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 3px 0 3px 3px;
+}
+
+#header .myJdCon{
+    right: 143px;
+    width: 305px;
+    height: 165px;
+}
+
+#header .myJdCon #logoInBtn{
+    width: 70px;
+    height: 25px;
+    background: url("../images/logoInBg.gif") repeat-x;
+    border: 1px solid #e5a63b;
+    border-radius: 3px;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#header .myJdCon dt{
+    margin-left: 8px;
+    margin-top: 5px;
+}
+
+#header .myJdCon dl dd{
+    width: 123px;
+    border-bottom: 1px dotted #cccccc;
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+#header .myJdCon dl dd a{
+    color: #005ea7;
+}
+
+#header .shoppingCarCon{
+    width: 308px;
+    right: 0;
+}
+
+/*头部区域结束*/
+
+/*导航区域*/
+#nav{
+    width: 1210px;
+    height: 40px;
+    margin: 0 auto;
+    background: url("../images/navBg.gif") repeat-x;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+}
+
+#nav .navAd{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 140px;
+    height: 40px;
+    background: url("../images/nav-ads.gif") no-repeat;
+}
+
+#nav a{
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: "微软雅黑";
+    display: block;
+    width: 85px;
+    height: 40px;
+}
+
+#nav .navAd a{
+    width: 140px;
+}
+
+#nav p{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+#nav ul{
+    position: absolute;
+    top: 0;
+    left: 210px;
+}
+
+#nav ul li{
+    width: 85px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+    background: url("../images/navLiBg.gif") no-repeat 0 11px;
+}
+
+#nav ul li.activeOver{
+    background: url("../images/mouseOverBg.gif") repeat-x;
+}
+/*导航区域结束*/
+
+/*轮播图区域*/
+#scrollBanner{
+    width: 1210px;
+    height: 430px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#scrollBanner #sideNav{
+    width: 206px;
+    height: 428px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #d00000;
+    background: #fcf4ea;
+}
+
+#scrollBanner #sideNav #sideMenu{
+    width: 165px;
+}
+
+#scrollBanner #sideNav #sideMenu li{
+    padding-left: 20px;
+    position: relative;
+    height: 30px;
+    width: 165px;
+    border-bottom: 1px solid #fffdfa;
+    background: url("../images/sideNavLiBg.gif") no-repeat 8px 14px;
+    line-height: 30px;
+    z-index: 10;
+}
+
+#scrollBanner #sideNav #hideMenu{
+    border: 1px solid #cc3300;
+    position: absolute;
+    top: -3px;
+    left: 180px;
+    width: 708px;
+    height: 431px;
+    background: #ffffff;
+    z-index: 2;
+}
+
+#scrollBanner #sideNav #hideMenu ul{
+    width: 465px;
+}
+
+#scrollBanner #sideNav #hideMenu li{
+    width: 465px;
+    margin-left: 8px;
+    border-bottom: 1px dotted #eed6b7;
+}
+
+#scrollBanner #sideNav #hideMenu li dl{
+    margin: 12px 0 ;
+}
+
+#scrollBanner #sideNav #hideMenu li dt{
+    display: inline-block;
+    float: left;
+    margin-left: 12px;
+    width: 45px;
+    height: 45px;
+}
+
+#scrollBanner #sideNav #hideMenu li dt a{
+    color: #cc0000;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: -5px;
+}
+
+#scrollBanner #sideNav #hideMenu li dd{
+    float: left;
+    height: 14px;
+    border-left: 1px solid #cccccc;
+    line-height: 14px;
+    padding-left: 8px;
+    margin: 4px 0 4px 10px;
+}
+
+#scrollBanner #sideNav #sideNavRight{
+    width: 201px;
+    height: 100%;
+    border-left: 1px solid #fbe2c6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fcf4ea;
+}
+
+#scrollBanner #sideNav #sideNavRight dl{
+    margin: 12px 0 10px 7px;
+}
+
+#scrollBanner #sideNav #sideNavRight dt{
+    margin-bottom: 10px;
+}
+#scrollBanner #sideNav #sideNavRight dt a{
+    color: #cc0000;
+    font-weight: bold;
+}
+
+#scrollBanner #sideNav #sideNavRight .shopName dd{
+     width: 96px;
+    float: left;
+}
+
+
+#scrollBanner #scrollBannerMid{
+    width: 672px;
+    height: 422px;
+    position: absolute;
+    top: 10px;
+    left: 220px;
+}
+
+#scrollBanner #scrollBannerMid .bannerTOP{
+    width: 670px;
+    height: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#scrollBanner #scrollBannerMid .bannerBottom{
+    width: 670px;
+    height: 150px;
+    border-left: 1px solid #f5f5f5;
+    position: absolute;
+    top: 240px;
+    left: 0;
+}
+
+#scrollBanner #scrollBannerMid .bannerBottom li{
+    float: left;
+    border-right: 1px solid #f5f5f5;
+}
+
+#scrollBanner #scrollBannerMid .switchBar{
+    width: 670px;
+    height: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #eeeeee;
+}
+
+#scrollBanner #scrollBannerMid .switchBar ul{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#scrollBanner #scrollBannerMid .switchBar li{
+    float: left;
+}
+
+#scrollBanner #scrollBannerMid .switchBar span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #999999;
+    margin-top: 7px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+#scrollBanner #scrollBannerMid .switchBar span a{
+    color: #ffffff;
+}
+
+#scrollBanner #scrollBannerRight{
+    top: 10px;
+    height: 420px;
+}
+
+#scrollBanner #scrollBannerRight .rightInfo{
+    height: 123px;
+    border: 1px solid #dddddd;
+}
+
+#scrollBanner #scrollBannerRight .rightInfo ul{
+    width: 143px;
+    border-left: 1px solid #eeeeee;
+    padding-left: 10px;
+    position: absolute;
+    top: 16px;
+}
+
+#scrollBanner #scrollBannerRight .rightInfo li{
+    height: 24px;
+    line-height: 24px;
+}
+
+#scrollBanner #scrollBannerRight .rightInfo .rightInfoLeft{
+    left: 0px;
+}
+
+#scrollBanner #scrollBannerRight .rightInfo .rightInfoRight{
+    left: 153px;
+}
+
+#scrollBanner #scrollBannerRight #rightTab{
+    width: 310px;
+    height: 150px;
+    border: 1px solid #dddddd
+}
+
+#scrollBanner #scrollBannerRight #rightTab .tabBar{
+    width: 310px;
+}
+
+#scrollBanner #scrollBannerRight #rightTab .tabBar ul{
+    width: 310px;
+}
+
+#scrollBanner #scrollBannerRight #rightTab .tabBar ul li{
+    float: left;
+    padding: 0 24px;
+    line-height: 30px;
+    font-weight: bold;
+    border-left: 1px solid #dddddd;
+}
+
+#scrollBanner #scrollBannerRight #rightTab .tabBar ul li .tabBarCon{
+    width: 300px;
+    height: 133px;
+    border: none;
+    font-weight: normal;
+    background: #ffffff;
+}
+
+/*轮播图区域结束*/
+
+
+/*疯狂抢购区域结束*/
+#productTabBg{
+    background: #cc0000;
+    width: 890px;
+    height: 290px;
+    top: 0;
+}
+
+#productTab{
+    width: 890px;
+    height: 288px;
+    background: #ffffff;
+    position: absolute;
+    top: 2px;
+}
+
+#productTab .tabBar{
+    top: 0px;
+    width: 892px;
+    border-radius: 0px;
+}
+
+#productTab .tabBar li{
+    float: left;
+    line-height: 30px;
+    height: 30px;
+    width: 177px;
+    text-align: center;
+    font-weight: bold;
+    border-left: 1px solid #dddddd;
+}
+
+#productTab .tabBar li .tabBarCon{
+    width: 880px;
+    height: 230px;
+    border: 1px solid #dddddd;
+    border-top: none;
+
+}
+
+#productTab .tabBar li .tabBarCon img{
+    width: 176px;
+    height: 150px;
+    margin-bottom: 5px;
+}
+
+#productTab .tabBar li .tabBarCon dl{
+    width: 870px;
+    position: relative;
+    height: 235px;
+}
+
+#productTab .tabBar li .tabBarCon dl a.productName{
+    display: inline-block;
+    font-weight: normal;
+    line-height: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#productTab .tabBar li .tabBarCon dd{
+    float: left;
+    width: 167px;
+    height: 235px;
+    line-height: 14px;
+    margin-left: 6px;
+}
+
+#productTab .tabBar li .tabBarCon dd span{
+    font-weight: normal;
+    color: #999999;
+}
+
+#productTab .tabBar li .tabBarCon dd b{
+    color: #d40000;
+}
+
+#productTabRight{
+    height: 270px;
+    top: 0px;
+
+}
+
+#productTabRight .rightInfo {
+    border: 1px solid #dddddd;
+    border-top: none;
+    height: 242px;
+}
+
+#productTabRight .rightInfo .infoBar{
+    position: absolute;
+    top: -30px;
+    height: 33px;
+}
+
+#productTabRight .rightInfo ul li{
+    height: 115px;
+    border-bottom: 1px dotted #cccccc;
+    margin: 10px 0;
+}
+
+#productTabRight .rightInfo ul img{
+    display: inline-block;
+    float: left;
+}
+
+#productTabRight .rightInfo ul div div{
+    width: 190px;
+    height: 105px;
+    display: inline-block;
+    float: left;
+    padding-top: 10px;
+    text-align: left;
+}
+
+#productTabRight .rightInfo ul div div h2{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 10px;
+}
+
+#productTabRight .rightInfo ul div div p{
+    margin-top: 5px;
+    color: #999999;
+    margin-left: 10px;
+}
+/*疯狂抢购区域结束*/
+
+
+/*限时抢购区域*/
+#productLimit{
+    width: 890px;
+    height: 305px;
+    background: url("../images/limitBg.png") no-repeat 100px 0 #f3f3f3;
+}
+
+#productLimit span.limitTitle{
+    display: block;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 0 0 8px;
+}
+
+#productLimit li{
+    float: left;
+    width: 168px;
+    height: 253px;
+    border: 1px solid #dddddd;
+    margin-left: 7px;
+    background: #ffffff;
+    position: relative;
+}
+
+#productLimit li .limitTimer{
+    display: block;
+    height: 30px;
+    border-bottom: 1px dotted #dddddd;
+    line-height: 30px;
+    text-align: center;
+    color: #999999;
+    margin-bottom: 10px;
+}
+
+#productLimit li .limitTimer b{
+    font-family: '微软雅黑';
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+#productLimit .productName{
+    display: block;
+    padding: 0 8px;
+    position: absolute;
+    top: 185px;
+
+}
+
+#productLimit ul li p{
+    display: block;
+    height: 28px;
+    border-top: 1px dotted #dddddd;
+    margin-bottom: 0;
+    padding: 0 8px;
+    line-height: 28px;
+    position: absolute;
+    bottom: 0;
+}
+
+#productLimit ul li p span{
+    color: #999999;
+}
+
+#productLimit ul li p b{
+    color: #dd0000;
+    font-weight: bold;
+}
+
+#productLimitRight{
+    height: 304px;
+    top: 290px;
+}
+
+#productLimitRight .rightInfo {
+    border: 1px solid #dddddd;
+    border-top: none;
+    height: 163px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#productLimitRight .rightInfo .infoBar{
+    position: absolute;
+    top: -30px;
+    height: 33px;
+}
+
+#productLimitRight .rightInfo p{
+    display: inline-block;
+    width: 178px;
+    height: 78px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+
+#productLimitRight .rightInfo span{
+    font-weight: normal;
+    color: #999999;
+}
+
+#productLimitRight .rightInfo span b{
+    color: #aa99bb;
+    text-decoration: line-through;
+}
+
+#productLimitRight .rightInfo .tuanGouAd{
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+#productLimitRight .rightInfo .thePrice{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+
+/*限时抢购区域结束*/
+
+/*电脑数码区域*/
+#computerBg{
+    height: 430px;
+}
+
+#computer .computerLeft{
+    height: 430px;
+}
+
+#computer .computerLeft h2{
+    display: block;
+    height: 40px;
+    background: url("../images/computerLeftBg.gif") repeat-x;
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+#computer .computerLeft ul{
+    width: 208px;
+}
+
+#computer .computerLeft ul li{
+    width: 90px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+
+#computer .computerLeft img{
+    margin-top: 20px;
+}
+
+#computer .computerLeft ul li a{
+    color: #005ea7;
+}
+
+#computer .computerLeft ul li a:hover{
+    color: #c81623;
+}
+
+#computer .computerLeft ul li span.dot{
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background: #005ea7;
+    margin: 5px;
+}
+
+
+#computer .computerMid{
+    height: 430px;
+}
+
+#computer .computerMid ul li a:hover{
+    color: #2e82d8;
+}
+
+#computer .computerMid .typeMidCon{
+    height: 393px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConLeft{
+    width: 226px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 393px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConLeft div{
+    height: 129px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#computer .computerMid .typeMidCon div p, same p{
+    width: 103px;
+    display: inline-block;
+    margin: 10px 0 0 10px;
+}
+
+#computer .computerMid .typeMidCon div p span,same p span{
+    display: block;
+    color: #cc0000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConLeft img,
+#computer .computerMid .typeMidCon .computerMidConRight img,same img{
+    margin-top: 10px;
+    width: 113px;
+    float: right;
+    max-height: 119px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid{
+    width: 225px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 226px;
+    height: 393px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConRight{
+    width: 226px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 393px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConRight div{
+    height: 129px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+#computer .computerMid .typeMidCon .computerMidConMid{
+    width: 225px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 226px;
+    height: 389px;
+    border-bottom: 1px solid #dddddd
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid .smallTab{
+    height: 260px;
+    border-bottom: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid .smallTab img{
+    width: 225px;
+    height: 259px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid .smallTab div.filter{
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    height: 35px;
+    width: 500px;
+    background: #ffffff;
+    filter: alpha(opacity:60);
+    opacity: 0.6;
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid .smallTab div.filterTop{
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    height: 35px;
+    width: 500px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid .smallTab span{
+    position: relative;
+    z-index: 2;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    line-height: 20px;
+    text-align: center;
+    bottom: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    filter: alpha(opacity:100);
+    opacity: 1;
+    color: #ffffff;
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid .same{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 129px;
+    border-bottom: 1px solid #dddddd;
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid .same p{
+    position: absolute;
+    top: 10px;
+}
+
+#computer .computerMid .typeMidCon .computerMidConMid .same img{
+    position: absolute;
+    right: -225px;
+}
+
+
+#computer .computerRight{
+    height: 432px;
+}
+
+#computer .computerRight .typeInfo{
+    height: 153px;
+    border: 1px solid #dddddd;
+    padding-left: 10px;
+    border-radius: 5px 5px 0 0;
+    background: #f3f3f3;
+}
+
+#computer .computerRight .typeInfo p{
+    padding-right: 10px;
+    height: 39px;
+    line-height: 39px;
+}
+
+#computer .computerRight .typeInfo p a{
+    float: right;
+    color: #005ea7;
+
+}
+
+#computer .computerRight .typeInfo li{
+    float: left;
+    margin-right: 6px;
+    margin-top: 1px;
+}
+
+#computer .computerRight .typeInfo li img{
+    height: 30px;
+}
+
+#computer .computerRight .typeBtn{
+    height: 55px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#computer .computerRight .typeBtn span{
+    margin-right: 3px;
+    padding-left: 30px;
+    display: inline-block;
+    width: 118px;
+    height: 53px;
+    line-height: 50px;
+    background: #f5f8ff;
+    border: 1px solid #c6cfd7;
+    background: url("../images/goToButton.gif") no-repeat 117px 15px;
+}
+
+#computer .computerRight .typeBtn span a{
+    font-size: 13px;
+    color: #1062b4;
+    font-weight: bold;
+    font-family: '微软雅黑';
+}
+
+/*电脑数码区域结束*/
+
+/*家电通讯*/
+#phoneBg{
+    height: 430px;
+}
+
+#phone .phoneLeft{
+    height: 430px;
+}
+
+#phone .phoneLeft img{
+    height: 130px;
+}
+
+#phone .phoneLeft h2{
+    display: block;
+    height: 40px;
+    background: url("../images/computerLeftBg.gif") repeat-x;
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+#phone .phoneLeft ul{
+    width: 208px;
+}
+
+#phone .phoneLeft ul li{
+    width: 90px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+
+#phone .phoneLeft img{
+    margin-top: 20px;
+}
+
+#phone .phoneLeft ul li a{
+    color: #005ea7;
+}
+
+#phone .phoneLeft ul li a:hover{
+    color: #c81623;
+}
+
+#phone .phoneLeft ul li span.dot{
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background: #005ea7;
+    margin: 5px;
+}
+
+
+#phone .phoneMid{
+    height: 430px;
+}
+
+#phone .phoneMid ul li a:hover{
+    color: #2e82d8;
+}
+
+#phone .phoneMid .typeMidCon{
+    height: 393px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConLeft{
+    width: 226px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 393px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConLeft div{
+    height: 129px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#phone .phoneMid .typeMidCon div p, same p{
+    width: 103px;
+    display: inline-block;
+    margin: 10px 0 0 10px;
+}
+
+#phone .phoneMid .typeMidCon div p span,same p span{
+    display: block;
+    color: #cc0000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConLeft img,
+#phone .phoneMid .typeMidCon .phoneMidConRight img,same img{
+    margin-top: 10px;
+    width: 113px;
+    float: right;
+    max-height: 119px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid{
+    width: 225px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 226px;
+    height: 393px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConRight{
+    width: 226px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 393px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConRight div{
+    height: 129px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+#phone .phoneMid .typeMidCon .phoneMidConMid{
+    width: 225px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 226px;
+    height: 389px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid .smallTab{
+    height: 260px;
+    border-bottom: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid .smallTab img{
+    width: 225px;
+    height: 259px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid .smallTab div.filter{
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    height: 35px;
+    width: 500px;
+    background: #ffffff;
+    filter: alpha(opacity:60);
+    opacity: 0.6;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid .smallTab div.filterTop{
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    height: 35px;
+    width: 500px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid .smallTab span{
+    position: relative;
+    z-index: 2;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    line-height: 20px;
+    text-align: center;
+    bottom: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    filter: alpha(opacity:100);
+    opacity: 1;
+    color: #ffffff;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid .same{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 129px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid .same p{
+    position: absolute;
+    top: 10px;
+}
+
+#phone .phoneMid .typeMidCon .phoneMidConMid .same img{
+    position: absolute;
+    right: -225px;
+    top: 30px;
+}
+
+
+#phone .phoneRight{
+    height: 432px;
+}
+
+#phone .phoneRight .typeInfo{
+    height: 153px;
+    border: 1px solid #dddddd;
+    padding-left: 10px;
+    border-radius: 5px 5px 0 0;
+    background: #f3f3f3;
+}
+
+#phone .phoneRight .typeInfo p{
+    padding-right: 10px;
+    height: 39px;
+    line-height: 39px;
+}
+
+#phone .phoneRight .typeInfo p a{
+    float: right;
+    color: #005ea7;
+
+}
+
+#phone .phoneRight .typeInfo li{
+    float: left;
+    margin-right: 6px;
+    margin-top: 1px;
+}
+
+#phone .phoneRight .typeInfo li img{
+    height: 30px;
+}
+
+#phone .phoneRight .typeBtn{
+    height: 55px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#phone .phoneRight .typeBtn span{
+    margin-right: 3px;
+    padding-left: 30px;
+    display: inline-block;
+    width: 118px;
+    height: 53px;
+    line-height: 50px;
+    background: #f5f8ff;
+    border: 1px solid #c6cfd7;
+    background: url("../images/goToButton.gif") no-repeat 117px 15px;
+}
+
+#phone .phoneRight .typeBtn span a{
+    font-size: 13px;
+    color: #1062b4;
+    font-weight: bold;
+    font-family: '微软雅黑';
+}
+
+/*家电通讯结束*/
+
+
+/*服装专区*/
+#clothBg{
+    height: 430px;
+}
+
+#cloth .clothLeft{
+    height: 430px;
+    position: relative;
+    border: 1px solid #cc0000;
+}
+
+#cloth .clothLeft img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 390px;
+}
+
+#cloth .clothLeft h2{
+    display: block;
+    height: 40px;
+    background: url("../images/clothLeftBg.gif") repeat-x;
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+#cloth .clothLeft ul{
+    width: 208px;
+}
+
+#cloth .clothLeft ul li{
+    width: 90px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+#cloth .clothLeft img{
+    margin-top: 20px;
+}
+
+#cloth .clothLeft ul li a{
+    color: #005ea7;
+}
+
+#cloth .clothLeft ul li a:hover{
+    color: #c81623;
+}
+
+#cloth .clothLeft ul li span.dot{
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background: #005ea7;
+    margin: 5px;
+}
+
+
+#cloth .clothMid{
+    height: 430px;
+    border-top: 2px solid #cc0000;
+}
+
+#cloth .clothMid ul li a:hover{
+    color: #2e82d8;
+}
+
+#cloth .clothMid .typeMidCon{
+    height: 393px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConLeft{
+    width: 226px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 393px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConLeft div{
+    height: 129px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#cloth .clothMid .typeMidCon div p, same p{
+    width: 103px;
+    display: inline-block;
+    margin: 10px 0 0 10px;
+}
+
+#cloth .clothMid .typeMidCon div p span,same p span{
+    display: block;
+    color: #cc0000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConLeft img,
+#cloth .clothMid .typeMidCon .clothMidConRight img,same img{
+    margin-top: 10px;
+    width: 113px;
+    float: right;
+    max-height: 119px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid{
+    width: 225px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 226px;
+    height: 393px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConRight{
+    width: 226px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 393px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConRight div{
+    height: 129px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+#cloth .clothMid .typeMidCon .clothMidConMid{
+    width: 225px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 226px;
+    height: 389px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid .smallTab{
+    height: 260px;
+    border-bottom: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid .smallTab img{
+    width: 225px;
+    height: 259px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid .smallTab div.filter{
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    height: 35px;
+    width: 500px;
+    background: #ffffff;
+    filter: alpha(opacity:60);
+    opacity: 0.6;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid .smallTab div.filterTop{
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    height: 35px;
+    width: 500px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid .smallTab span{
+    position: relative;
+    z-index: 2;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    line-height: 20px;
+    text-align: center;
+    bottom: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    filter: alpha(opacity:100);
+    opacity: 1;
+    color: #ffffff;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid .same{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 129px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid .same p{
+    position: absolute;
+    top: 10px;
+}
+
+#cloth .clothMid .typeMidCon .clothMidConMid .same img{
+    position: absolute;
+    right: -225px;
+    top: 30px;
+}
+
+
+#cloth .clothRight{
+    height: 432px;
+}
+
+#cloth .clothRight .typeInfo{
+    height: 153px;
+    border: 1px solid #dddddd;
+    padding-left: 10px;
+    border-radius: 5px 5px 0 0;
+    background: #f3f3f3;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#cloth .clothRight .typeInfo p{
+    padding-right: 10px;
+    height: 39px;
+    line-height: 39px;
+}
+
+#cloth .clothRight .typeInfo p a{
+    float: right;
+    color: #005ea7;
+
+}
+
+#cloth .clothRight .typeInfo li{
+    float: left;
+    margin-right: 6px;
+    margin-top: 1px;
+}
+
+#cloth .clothRight .typeInfo li img{
+    height: 30px;
+}
+
+#cloth .clothRight .infoList{
+    /*height: 176px;*/
+    position: absolute;
+    top: 40px;
+}
+
+#cloth .clothRight .infoList li{
+    clear: both;
+}
+
+#cloth .clothRight .infoList li span{
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background: #1062b4;
+    margin: 5px 5px 4px;
+}
+
+#cloth .clothRight .infoList li a{
+    font-size: 12px;
+    color: #1062b4;
+
+}
+
+#cloth .clothRight .infoList li a:hover{
+    color: #c81623;
+}
+
+/*服装专区结束*/
+
+
+/*图书音响区域*/
+#bookBg{
+    height: 300px;
+}
+
+#book .bookLeft{
+    height: 300px;
+    border: 1px solid #f28300;
+}
+
+#book .bookLeft img{
+    height: 130px;
+}
+
+#book .bookLeft h2{
+    display: block;
+    height: 40px;
+    background: url("../images/bookLeftBG.gif") repeat-x;
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+#book .bookLeft ul{
+    width: 208px;
+}
+
+#book .bookLeft ul li{
+    width: 90px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+#book .bookLeft img{
+    margin-top: 10px;
+    width: 208px;
+}
+
+#book .bookLeft ul li a{
+    color: #005ea7;
+}
+
+#book .bookLeft ul li a:hover{
+    color: #c81623;
+}
+
+#book .bookLeft ul li span.dot{
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background: #005ea7;
+    margin: 5px;
+}
+
+
+#book .bookMid{
+    height: 300px;
+    border-top: 2px solid #f28300;
+}
+
+#book .bookMid ul li a:hover{
+    color: #2e82d8;
+}
+
+#book .bookMid .typeMidCon{
+    height: 260px;
+}
+
+#book .bookMid .typeMidCon .bookMidConLeft{
+    width: 226px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 260px;
+}
+
+#book .bookMid .typeMidCon .bookMidConLeft div{
+    height: 129px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#book .bookMid .typeMidCon div p, same p{
+    width: 103px;
+    display: inline-block;
+    margin: 10px 0 0 10px;
+}
+
+#book .bookMid .typeMidCon div p span,same p span{
+    display: block;
+    color: #cc0000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#book .bookMid .typeMidCon .bookMidConLeft img,
+#book .bookMid .typeMidCon .bookMidConRight img,same img{
+    margin-top: 10px;
+    width: 113px;
+    float: right;
+    max-height: 119px;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid{
+    width: 225px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 226px;
+    height: 300px;
+}
+
+#book .bookMid .typeMidCon .bookMidConRight{
+    width: 226px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 260px;
+}
+
+#book .bookMid .typeMidCon .bookMidConRight div{
+    height: 129px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+#book .bookMid .typeMidCon .bookMidConMid{
+    width: 225px;
+    border-right: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 226px;
+    height: 260px;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid .smallTab{
+    height: 260px;
+    border-bottom: 1px solid #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid .smallTab img{
+    width: 225px;
+    height: 259px;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid .smallTab div.filter{
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    height: 35px;
+    width: 500px;
+    background: #ffffff;
+    filter: alpha(opacity:60);
+    opacity: 0.6;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid .smallTab div.filterTop{
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    height: 35px;
+    width: 500px;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid .smallTab span{
+    position: relative;
+    z-index: 2;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    line-height: 20px;
+    text-align: center;
+    bottom: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    filter: alpha(opacity:100);
+    opacity: 1;
+    color: #ffffff;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid .same{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 129px;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid .same p{
+    position: absolute;
+    top: 10px;
+}
+
+#book .bookMid .typeMidCon .bookMidConMid .same img{
+    position: absolute;
+    right: -225px;
+    top: 30px;
+}
+
+
+#book .bookRight{
+    height: 300px;
+    border: 1px solid #dddddd;
+    border-radius: 5px 5px 0 0;
+}
+
+#book .bookRight .tabHeader{
+    width: 310px;;
+    height: 38px;
+    border: 1px solid #dddddd;
+    background: url("../images/tabBgWide.gif") repeat-x;
+}
+
+#book .bookRight .tabHeader li{
+    float: left;
+    height: 38px;
+    width: 60px;
+    border-right: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    line-height: 38px;
+    text-align: center;
+}
+
+#book .bookRight .tabHeader li a{
+    font-weight: bold;
+}
+
+#book .bookRight .tabCon{
+    width: 310px;
+    height: 260px;
+}
+
+#book .bookRight .tabCon li{
+    width: 297px;
+    margin: 0 5px;
+    height: 25px;
+    border-bottom: 1px dotted #cccccc;
+    line-height: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+#book .bookRight .tabCon li a{
+    display: inline-block;
+    width: 145px;
+    overflow: hidden;
+    height: 25px;
+    position: absolute;
+    left: 22px;
+}
+
+#book .bookRight .tabCon li span{
+    display: inline-block;
+    width: 18px;
+    height: 17px;
+    line-height: 17px;
+    text-align: center;
+    background: url("../images/bookRightLiBg.gif") no-repeat;
+    font-size: 9px;
+    color: #ffffff;
+    position: absolute;
+    top: 4px;
+}
+
+#book .bookRight .tabCon li b{
+    color: #cc0000;
+    float: right;
+}
+
+
+/*图书音响区域结束*/
+
+/*热门晒单*/
+#showBg{
+    height: 192px;
+}
+
+#showBg .showLeft{
+    height: 190px;
+    width: 888px;
+    border: 1px solid #dddddd;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#showBg .showLeft .show{
+    width: 441px;
+    height: 190px;
+    border-right: 1px solid #dddddd;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+#showBg .showLeft .activity{
+    width: 444px;
+    height: 190px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+}
+
+#showBg .showLeft p{
+    height: 29px;
+    width: 100%;
+    background: #f3f3f3;
+    line-height: 28px;
+    padding-left: 8px;
+    font-weight: bold;
+}
+
+#showBg .showLeft ul{
+    position: absolute;
+    background: #ffffff;
+    left: 10px;
+    top: 38px;
+}
+
+#showBg .showLeft li{
+    position: relative;
+    height: 80px;
+    width: 423px;
+    border-bottom: 1px dotted #cccccc;
+    margin: 0 auto;
+    background: url("../images/douhao.gif") no-repeat 385px 38px;
+}
+
+#showBg .showLeft li img{
+    position: absolute;
+    left: 13px;
+    top: 9px;
+}
+
+#showBg .showLeft li a{
+    position: absolute;
+    left: 79px;
+    top: 12px;
+    color: #005ea7;
+}
+
+#showBg .showLeft li p{
+    width: 280px;
+    position: absolute;
+    left: 79px;
+    top: 37px;
+    background: none;
+    line-height: 12px;
+    padding-left: 0px;
+    font-weight: normal;
+    color: #999999;
+}
+
+#showBg .showLeft li span{
+    font-size: 30px;
+    position: absolute;
+    right: 16px;
+}
+
+#showBg .showRight{
+    height: 192px;
+    width: 310px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#showBg .showRight .readOnline{
+    width: 308px;
+    height: 139px;
+    border: 1px solid #dddddd;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+
+#showBg .showRight .readOnline .readOnlineTop{
+    width: 308px;
+    height: 29px;
+    background: #f3f3f3;
+}
+
+#showBg .showRight .readOnline .readOnlineTop span{
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+#showBg .showRight .readOnline .readOnlineTop a{
+    float: right;
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    color: #005ea7;
+}
+
+#showBg .showRight .readOnline .readOnlineCon img{
+    position: absolute;
+    top: 34px;
+    left: 7px;
+}
+
+#showBg .showRight .readOnline .readOnlineCon ul{
+    width: 190px;
+    position: absolute;
+    top: 41px;
+    left: 113px;
+}
+
+#showBg .showRight .readOnline .readOnlineCon ul li{
+    margin: 2px 0;
+}
+
+#showBg .showRight .readOnline .readOnlineCon ul span{
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background: #005ea7;
+    margin: 5px 2px;
+}
+
+#showBg .showRight .bookInfo p{
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+#showBg .showRight .bookInfo .text{
+    width: 215px;
+    height: 23px;
+    border: 1px solid #eaeaea;
+    background: url("../images/mail.gif") no-repeat 4px 5px;
+    padding-left: 25px;
+    float: left;
+}
+
+#showBg .showRight .bookInfo input{
+    border: none;
+    width: 215px;
+    height: 23px;
+    color: #999999;
+}
+
+#showBg .showRight .bookInfo .bookBtn{
+    float: right;
+    width: 60px;
+    height: 23px;
+    border: 1px solid #e09c29;
+    border-radius: 5px;
+    background: url("../images/bookBtnBg.gif") repeat-x;
+    text-align: center;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+
+/*热门晒单结束*/
+
+
+/*网站地图*/
+#map{
+    margin: 20px auto 0;
+    width: 1208px;
+    height: 176px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    position: relative;
+}
+
+#map .mapList{
+    width: 110px;
+    height: 148px;
+    position: absolute;
+    top: 13px;
+}
+
+#map .mapList dt{
+    font-weight: bold;
+    padding-left: 33px;
+    height: 30px;
+    line-height: 26px;
+}
+
+#map .mapList dd{
+    padding: 2px 0 2px 21px;
+    border-left: 1px dotted #cfcfcf;
+    margin-left: 12px;
+}
+
+#map .guide{
+    left: 32px;
+    background: url("../images/footIcon.gif") no-repeat 0 0;
+}
+
+#map .delivery{
+    left: 220px;
+    background: url("../images/footIcon-07.gif") no-repeat 0 0;
+}
+
+#map .pay{
+    left: 414px;
+    background: url("../images/footIcon-08.gif") no-repeat 0 0;
+}
+
+#map .afterSale{
+    left: 607px;
+    background: url("../images/footIcon-09.gif") no-repeat 0 0;
+}
+
+#map .service{
+    left: 798px;
+    background: url("../images/footIcon-10.gif") no-repeat 0 0;
+}
+
+#map .describe{
+    width: 203px;
+    height: 153px;
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    background: url("../images/c.png") no-repeat;
+}
+
+#map .describe h2{
+    font-weight: bold;
+    height: 30px;
+    line-height: 26px;
+}
+
+#map .describe a{
+    position: absolute;
+    top: 111px;
+    right: 0px;
+    color: #005ea7;
+}
+
+#map .describe a:hover{
+    color: #c81623;
+}
+/*网站地图结束*/
+
+/*网站底部*/
+#footer{
+    width: 1210px;
+    height: 162px;
+    margin: 20px auto 0;
+    position: relative;
+}
+
+#footer ul{
+    width: 930px;
+    margin: 0 auto;
+}
+
+#footer ul li{
+    float: left;
+    padding: 0 11px;
+    border-right: 1px solid #773377;
+}
+
+#footer ul li.last{
+    border: none;
+}
+
+#footer p.first{
+    margin: 15px auto 0;
+    width: 700px;
+    text-align: center;
+}
+
+#footer .footPic{
+    width: 530px;
+    margin: 10px auto 0;
+}
+
+#footer .footPic li{
+    border: none;
+}
+/*网站底部结束*/

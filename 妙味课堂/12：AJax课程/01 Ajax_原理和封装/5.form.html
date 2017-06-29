@@ -1,0 +1,21 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+    表单：数据的提交
+        action：数据提交的地址，默认的当前页面
+        method：数据提交的方式，默认是get方式
+            1.get
+                把数据名称和数据值用‘=’链接，如果有多个的话，那么会把多个数据用‘&’进行连接，然后把数据放到‘url?’后面传到指定页面
+            2.post
+
+        enctype：提交的数据格式，默认是application/x-www-form-urlencoded
+    <form action="1.get.php">
+        <input type="text" name="username" />
+        <input type="text" name="age" />
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

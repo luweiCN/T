@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>千柏渡-礼仪师</title>
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.css">
+    <script src="../public/js/jquery-1.11.1.js"></script>
+    <script src="../public/js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function(){
+            var myUrl = "http://api.idukou.com/api/Merchants/1/91";
+            var myJson = null;
+
+            $("#b01").click(function(){
+                myJson=$.ajax({
+                    url: myUrl,
+                    async:false,
+                    dataType:'json'
+                });
+
+
+//                alert(myJson);
+//
+//                var myJson = JSON.parse(myJson);
+//
+//                alert(myJson);
+                alert(myJson.Pagination.TotalRecords);
+
+            });
+        });
+    </script>
+</head>
+<body><div id="myDiv"><h2>礼仪师</h2></div>
+    <button id="b01" type="button">获取</button></body>
+</html>

@@ -1,0 +1,988 @@
+/*css重置*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li,dd{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img,input{
+    border: none;
+    border: 1px solid none; /*针对ie6*/
+}
+
+/*清除浮动*/
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.clear{
+    zoom: 1;
+}
+/*清除浮动结束*/
+
+/*公共样式*/
+body{
+    font: 12px/1.62 Helvetica, Arial, sans-serif;
+}
+
+h2.title{
+    font: 15px/150% Arial,Helvetica, sans-serif;
+    color: #007722;
+}
+
+h2.title span a{
+    color: #555d53;
+}
+
+h2.title span a:hover{
+    color: #ffffff;
+}
+
+a{
+    color: #3377aa;
+}
+a:hover{
+    background: #3377aa;
+    color: #fff;
+}
+
+.right{
+    width: 265px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.dbAd{
+    width: 950px;
+    height: 90px;
+    margin: 0 auto;
+}
+
+.dbAd a:hover{
+    background: none;
+}
+
+.left{
+    width: 121px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.left dt{
+    font-size: 24px;
+    color: #2297cc;
+}
+
+.left dd{
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.left ul{
+    margin-top: 28px;
+}
+
+.left ul li{
+    height: 91px;
+    width: 70px;
+}
+
+.left ul li .leftBottomPic{
+    border-radius: 7px;
+    box-shadow: 3px 3px 3px #888;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("../img/app_icons_50_6.jpg") no-repeat -350px 0;
+}
+
+.left ul li .leftBottomDes{
+    display: inline-block;
+    margin-top: 6px;
+}
+
+.mid{
+    width: 536px;
+    position: absolute;
+    left: 121px;
+    top: 0;
+}
+
+.mid li{
+    width: 127px;
+    float: left;
+    text-align: center;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+
+/*头部*/
+#dbHeader{
+    width: 950px;
+    height: 90px;
+    margin: 0 auto;
+    /*border: 1px solid red;*/
+    position: relative;
+}
+
+#dbHeader .headerLogo{
+    display: block;
+    width: 171px;
+    height: 40px;
+    background: url("../img/douban_logo_03.gif") no-repeat;
+    position: absolute;
+    left: 0px;
+    bottom: 21px;
+}
+
+#dbHeader .headerSearch{
+    width: 303px;
+    height: 30px;
+    position: absolute;
+    border: 1px solid #c3c3c3;
+    left: 183px;
+    top: 30px;
+    color: #e4e4e4;
+    font-size: 12px;
+    line-height: 30px;
+    padding-left: 7px;
+}
+
+#dbHeader .searchButton{
+    display: block;
+    background: url("../img/headerSearch_06.gif") no-repeat;
+    width: 14px;
+    height: 15px;
+    position: absolute;
+    left: 471px;
+    top: 40px;
+}
+
+#dbHeader .headerNav{
+    width: 400px;
+    height: 24px;
+    background: url("../img/nav_img_06.gif") no-repeat;
+    position: absolute;
+    top: 36px;
+    right: 0;
+    padding-left: 2px;
+}
+
+#dbHeader .headerNav li{
+    float: left;
+}
+
+#dbHeader .headerNav li a{
+    display: block;
+    width: 40px;
+    height: 20px;
+    margin-right: 24px;
+    background: none;
+}
+#dbHeader .headerNav li #navFm{
+    width: 80px;
+}
+#dbHeader .headerNav li #navLocal{
+    margin-right: 0;
+}
+/*头部结束*/
+
+
+/*注册区域*/
+#dbRegBg{
+    background: #e8edf1;
+    height: 88px;
+    width: 100%;
+}
+
+#dbReg{
+    width: 950px;
+    height: 88px;
+    margin: 0 auto;
+    /*border: 1px solid red;*/
+    position: relative;
+}
+
+#dbReg .regJoin{
+    display: block;
+    width: 120px;
+    height: 37px;
+    border-radius: 2px;
+    background: #ef7360;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 37px;
+    text-align: center;
+}
+
+#dbReg .regJoin:hover{
+    background: #ed6752;
+}
+
+#dbReg .regJoin span{
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#dbReg p{
+    position: absolute;
+    left: 139px;
+    top: 32px;
+    color: #666666;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#dbReg input{
+    width: 148px;
+    height: 33px;
+    position: absolute;
+    font-size: 12px;
+    padding-left: 10px;
+    color: #e4e4e4;
+}
+
+#dbReg .regUsername{
+    right: 249px;
+    top: 20px;
+}
+
+#dbReg .regPasswd{
+    right: 87px;
+    top: 20px;
+}
+
+#dbReg .regLogin{
+    display: block;
+    width: 80px;
+    height: 33px;
+    border-radius: 2px;
+    background: #3ba354;
+    position: absolute;
+    top: 20px;
+    right: 3px;
+    font-size: 12px;
+    line-height: 33px;
+    text-align: center;
+    color: #fff;
+}
+
+#dbReg .regLogin:hover{
+    background: #1c9439;
+}
+
+#dbReg form p{
+    position: absolute;
+    left: 543px;
+    top: 64px;
+    width: 90px;
+    height: 13px;
+    font-size: 12px;
+    line-height: 13px;
+    color: 12px;
+    padding-left: 16px;
+}
+
+#dbReg .regRember{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 13px;
+    height: 13px;
+}
+
+#dbReg .regForget{
+    position: absolute;
+    top: 62px;
+    left: 704px;
+}
+/*注册区域结束*/
+
+/*内容区域*/
+#dbCon{
+    width: 950px;
+    height: 544px;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+#dbCon .conLeft{
+    width: 363px;
+    height: 544px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#dbCon .conLeft ul{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 360px;
+}
+
+#dbCon .conLeft li{
+    width: 170px;
+    margin-right: 10px;
+    float: left;
+}
+
+#dbCon .conLeft span{
+    color: #999999;
+}
+
+#dbCon .conLeft .conLeftPic:hover{
+    background: none;
+}
+
+#dbCon .conMid{
+    width: 288px;
+    height: 544px;
+    position: absolute;
+    left: 380px;
+    top: 0px;
+}
+
+#dbCon .conMid ul{
+    position: absolute;
+    top: 30px;
+}
+
+#dbCon .conMid ul li{
+    line-height: 30px;
+}
+
+#dbCon .conMid h3{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#dbCon .conMid h4{
+    font-size: 12px;
+    font-weight: normal;
+    color: #999999;
+}
+
+#dbCon .conMid blockquote{
+    color: #666666;
+}
+
+#dbCon .right{
+    height: 544px;
+}
+
+#dbCon .right h2 span{
+    color: #666666;
+    font-size: 12px;
+}
+
+#dbCon .right ul{
+    position: absolute;
+    top: 30px;
+}
+
+#dbCon .right ul li{
+    margin-bottom: 15px;
+}
+
+#dbCon .right ul h3,span{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#dbCon .right ul span{
+    color: #999999;
+}
+
+#dbCon .conRightAd{
+    width: 258px;
+    height: 118px;
+    border: 1px solid #eeeeee;
+    position: absolute;
+    top: 380px;
+    background: url("../img/conRightAd_28.gif") 186px 0 no-repeat;
+}
+
+#dbCon .right li h2{
+    display: inline-block;
+    font-size: 14px;
+    position: absolute;
+    top: 13px;
+    left: 19px;
+}
+
+#dbCon .right li img{
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 86px;
+}
+
+#dbCon .right .rightAdPic{
+    display: inline-block;
+    position: absolute;
+    top: 38px;
+    left: -65px;
+}
+
+#dbCon .right #rightAdTitle{
+    display: inline-block;
+    position: absolute;
+    top: 44px;
+    left: 128px;
+}
+
+#dbCon .conRightAd span{
+    display: inline-block;
+    position: absolute;
+    top: 66px;
+    left: 128px;
+}
+
+#dbCon .conRightAd .time{
+    top: 84px;
+}
+
+/*内容区域结束*/
+
+/*电影区域*/
+#dbMoveBg{
+    width: 100%;
+    height: 595px;
+    background: #f7f7f7;
+    margin-top: 46px;
+    padding-top: 39px;
+}
+
+#dbMovie{
+    width: 950px;
+    height: 634px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#dbMovie .mid li span{
+    display: block;
+    width: 67px;
+    height: 11px;
+    padding-left: 60px;
+    line-height: 11px;
+    color: #ff4400;
+}
+
+#dbMovie .point1{
+    background: url("../img/midstars.gif") no-repeat 23px -66px;
+}
+
+#dbMovie .point2{
+    background: url("../img/midstars.gif") no-repeat 23px -44px;
+}
+
+#dbMovie .point3{
+    background: url("../img/midstars.gif") no-repeat 23px -22px;
+}
+
+#dbMovie .point4{
+    background: url("../img/midstars.gif") no-repeat 23px -33px;
+}
+
+#dbMovie .point5{
+    background: url("../img/midstars.gif") no-repeat 23px -33px;
+}
+
+#dbMovie .point6{
+    background: url("../img/midstars.gif") no-repeat 23px -55px;
+}
+
+#dbMovie .mid .moviePic img{
+    width: 100px;
+    height: 140px;
+}
+
+#dbMovie .mid li .movieName{
+    color: #000;
+}
+
+#dbMovie .mid li .movieName:hover{
+    color: #ffffff;
+}
+
+#dbMovie .mid li .moviePic:hover{
+    background: none;
+}
+
+#dbMovie .mid li .chose{
+    display: block;
+    width: 68px;
+    height: 23px;
+    background: #1c8bd0;
+    color: #ffffff;
+    line-height: 23px;
+    border-radius: 3px;
+    margin: 5px auto 0;
+}
+
+
+#dbMovie .right .movieRightUl{
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+#dbMovie .right .movieRightUl li{
+    width: 50px;
+    float: left;
+    text-align: left;
+    line-height: 23px;
+}
+
+#dbMovie .right .movieRank li{
+    list-style: decimal;
+    border-bottom: 1px solid #eaeaea;
+    height: 30px;
+    line-height: 30px;
+    width: 264px;
+    margin-left: 18px;
+}
+
+#dbMovie .right .movieRank li a{
+    margin-left: 12px;
+}
+/*电影区域结束*/
+
+/*读书区域*/
+#dbBook{
+    width: 950px;
+    height: 625px;
+    margin: 34px auto 0;
+    position: relative;
+}
+
+#dbBook .bookLeft a{
+    color: #614e3c;
+}
+
+#dbBook .bookLeft a:hover{
+    color: #ffffff;
+}
+
+#dbBook .bookLeft .leftBottom .read{
+    background: url("../img/app_icons_50_6.jpg") no-repeat 0 0;
+}
+
+#dbBook .bookLeft .leftBottom .note{
+    background: url("../img/app_icons_50_6.jpg") no-repeat -400px 0;
+}
+
+#dbBook .bookLeft .leftBottom .booklist{
+    background: url("../img/app_icons_50_6.jpg") no-repeat -200px 0;
+}
+
+#dbBook .bookLeft #readNew{
+    background: url("../img/new_65.gif") no-repeat 28px 5px ;
+}
+
+#dbBook .mid li span{
+    display: block;
+    width: 127px;
+    height: 18px;
+    padding-left: 0px;
+    line-height: 22px;
+    color: #000;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+#dbBook .mid .bookPic img{
+    width: 100px;
+    height: 148px;
+}
+
+#dbBook .mid li .bookName{
+    color: #614e3c;
+}
+
+#dbBook .mid li .bookName:hover{
+    color: #ffffff;
+}
+
+#dbBook .mid li .bookPic:hover{
+    background: none;
+}
+
+#dbBook .mid li .chose{
+    display: block;
+    width: 68px;
+    height: 23px;
+    background: #999a95;
+    color: #ffffff;
+    line-height: 23px;
+    border-radius: 3px;
+    margin: 5px auto 0;
+}
+
+#dbBook .mid li .chose:hover{
+    background: #878882;
+}
+
+#dbBook .mid .bookPrice{
+    display: block;
+    height: 18px;
+    line-height: 18px;
+    color: #666666;
+    margin-top: 4px;
+}
+
+#dbBook .right .bookRightUl li{
+    width: 256px;
+    height: 60px;
+    border-bottom: 1px solid #eaeaea;
+    margin-top: 14px;
+}
+
+#dbBook .right .bookRightUl li dt{
+    color: #999999;
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 14px;
+}
+
+#dbBook .right .bookRightUl li dd{
+    color: #999999;
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 14px;
+}
+
+#dbBook .right .bookRightUl a{
+    color: #614e3c;
+}
+
+#dbBook .right .bookRightUl a:hover{
+    color: #ffffff;
+}
+
+
+/*读书区域结束*/
+
+/*音乐区域*/
+#dbMusicBg{
+    height: 470px;
+    height: 100%;
+    margin-top: 45px;
+    background: #f7f7f7;
+    padding-top: 40px;
+}
+
+#dbMusic{
+    width: 950px;
+    height: 470px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#dbMusic .musicLeft a{
+    color: #555d53;
+}
+
+#dbMusic .musicLeft .typeTitle{
+    color: #f38c00;
+}
+
+#dbMusic .left .typeTitle:hover{
+    color: #ffffff;
+}
+
+#dbMusic .musicLeft .leftBottom .fm{
+    background: url("../img/app_icons_50_6.jpg") no-repeat -250px 0;
+}
+
+#dbMusic .musicLeft .leftBottom .musician{
+    background: url("../img/app_icons_50_6.jpg") no-repeat -50px 0;
+}
+
+#dbMusic .mid li span{
+    display: block;
+    width: 67px;
+    height: 11px;
+    padding-left: 60px;
+    line-height: 11px;
+    color: #ff4400;
+}
+
+#dbMusic .point1{
+    background: url("../img/midstars.gif") no-repeat 23px -11px;
+}
+
+#dbMusic .point2{
+    background: url("../img/midstars.gif") no-repeat 23px -22px;
+}
+
+#dbMusic .point3{
+    background: url("../img/midstars.gif") no-repeat 23px -22px;
+}
+
+#dbMusic .point4{
+    background: url("../img/midstars.gif") no-repeat 23px -22px;
+}
+
+#dbMusic .point5{
+    background: url("../img/midstars.gif") no-repeat 23px -11px;
+}
+
+#dbMusic .point6{
+    background: url("../img/midstars.gif") no-repeat 23px -33px;
+}
+
+#dbMusic .point7{
+    background: url("../img/midstars.gif") no-repeat 23px 0px;
+}
+
+#dbMusic .point8{
+    background: url("../img/midstars.gif") no-repeat 23px -11px;
+}
+
+#dbMusic .mid .musicPic img{
+    width: 80px;
+    height: 80px;
+}
+
+#dbMusic .mid li .musicName{
+    color: #555d53;
+}
+
+#dbMusic .mid li .singer{
+    height: 24px;
+    line-height: 24px;
+}
+
+#dbMusic .mid li .musicName:hover{
+    color: #ffffff;
+}
+
+#dbMusic .mid li .musicPic:hover{
+    background: none;
+}
+
+#dbMusic .mid li .chose{
+    display: block;
+    width: 68px;
+    height: 23px;
+    background: #1c8bd0;
+    color: #ffffff;
+    line-height: 23px;
+    border-radius: 3px;
+    margin: 5px auto 0;
+}
+
+#dbMusic .mid{
+    color: #555d53;
+}
+
+#dbMusic .right .musicRank li {
+    width: 264px;
+    height: 60px;
+    position: relative;
+    margin-top: 20px;
+}
+
+#dbMusic .right .musicRank li .num{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #000000;
+}
+
+#dbMusic .right .musicRank li img{
+    width: 48px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+
+#dbMusic .right .musicRank li .singerName{
+    position: absolute;
+    left: 80px;
+    color: #555d53;
+}
+
+#dbMusic .right .musicRank li .singerName:hover{
+    color: #ffffff;
+}
+#dbMusic .right .musicRank li p{
+    position: absolute;
+    left: 80px;
+    top: 25px;
+    color: #999999;
+}
+
+#dbMusic .right .musicRank li span{
+    position: absolute;
+    left: 80px;
+    top: 45px;
+    color: #999999;
+}
+
+
+/*音乐区域结束*/
+
+
+/*同城区域*/
+#dbCityBg{
+    width: 100%;
+    height: 406px;
+    background: #ffffff;
+}
+
+#dbCity{
+    width: 950px;
+    height: 368px;
+    position: relative;
+    margin: 38px auto 0;
+}
+
+#dbCity a{
+    color: #664433;
+}
+
+#dbCity .left .typeTitle{
+    color: #ee5303;
+}
+
+#dbCity .left .typeTitle:hover{
+    color: #ffffff;
+}
+
+#dbCity a:hover{
+    color: #ffffff;
+}
+
+#dbCity .left .leftBottom .city{
+    background: url("../img/app_icons_50_6.jpg") no-repeat -100px 0;
+}
+
+
+
+#dbCity .mid li{
+    width: 268px;
+    height: 140px;
+    position: relative;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+#dbCity .mid li img{
+    width: 70px;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#dbCity .mid .text{
+    width: 155px;
+    position: absolute;
+    left: 80px;
+}
+#dbCity .mid p{
+    width: 155px;
+    text-align: left;
+}
+
+#dbCity .mid p.time{
+    width: 175px;
+    color: #666666;
+}
+
+#dbCity .mid .point,#dbCity .mid .locate{
+    width: 155px;
+    text-align: left;
+    color: #666666;
+}
+
+#dbCity .mid .cityName{
+    margin-bottom: 5px;
+}
+
+#dbCity .mid ul li p a span{
+    display: inline-block;
+    width: 50px;
+    height: 18px;
+    background: #ff8263;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+#dbCity .mid ul li p a span:hover{
+    background: #ff8263;
+}
+
+#dbCity .right .cityRightUl li{
+    height: 45px;
+    margin: 10px 0;
+
+}
+
+#dbCity .right .cityRightUl dl dt{
+
+    color: #333333;
+    font-size: 14px;
+    clear: left;
+
+}
+
+#dbCity .right .cityRightUl dl dd{
+    float: left;
+    margin-right: 13px;
+
+}
+/*同城区域结束*/
+
+
+/*网页底部*/
+#dbFoot{
+    width: 950px;
+    height: 95px;
+    border-top:1px dashed #dcdcdc;
+    margin: 35px auto 0;
+    padding-top: 15px;
+}
+
+#dbFoot .footLeft{
+    width: 450px;
+    color: #999999;
+    float: left;
+}
+
+#dbFoot .footRight{
+    float: right;
+    width: 432px;
+    height: 95px;
+    margin-top: 0;
+}
+
+#dbFoot .footRight ul{
+    top: 0px;
+}
+
+#dbFoot .footRight li{
+    float: left;
+    margin-left: 12px;
+}
+
+/*网页底部结束*/
+
+
+

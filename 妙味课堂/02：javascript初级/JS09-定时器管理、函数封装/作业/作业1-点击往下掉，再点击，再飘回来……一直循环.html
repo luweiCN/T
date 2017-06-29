@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="./luwei.js"></script>
+<script>
+    window.onload = function(){
+        var aDiv = document.getElementsByTagName('div');
+        var timer = null;
+        var onOff = 'down';
+
+        for(var i=0; i<20; i++){
+            var str = '<div style="width: 50px; height: 50px; background:red; position: absolute; top: 0; left:' + i*60 + 'px;" >' + '</div>';
+            document.body.innerHTML += str;
+        }
+
+
+            var n = 0;
+            document.onclick = function(){
+                if(parseInt(getStyle(aDiv[aDiv.length - 1], 'top')) >= 700){
+                    n = aDiv.length - 1;
+                    clearInterval(timer);
+                    timer = setInterval(function(){
+                        doMove(aDiv[n], 'top', 12, 0, 50);
+                        n--;
+                        if(n < 0){
+                            clearInterval(timer);
+                        }
+                    }, 50);
+                }
+                if(parseInt(getStyle(aDiv[0], 'top')) <= 0) {
+                    n = 0;
+                    clearInterval(timer);
+                    timer = setInterval(function(){
+                        doMove(aDiv[n], 'top', 12, 700, 50);
+                        n++;
+                        if(n == aDiv.length){
+                            clearInterval(timer);
+                        }
+                    }, 50);}
+
+            };
+
+
+    };
+</script>
+<body>
+
+</body>
+</html>

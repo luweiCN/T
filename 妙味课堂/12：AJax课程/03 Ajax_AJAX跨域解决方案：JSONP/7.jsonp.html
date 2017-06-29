@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        function fn1(data){
+            var oUl1 = document.getElementById('ul1');
+            var html = '';
+            for(var i=0; i<data.length; i++){
+                html += '<li>' + data[i] + '</li>';
+            }
+            oUl1.innerHTML = html;
+        }
+
+        function fn2(data){
+            var oUl2 = document.getElementById('ul2');
+            var html = '';
+            for(var i=0; i<data.length; i++){
+                html += '<li>' + data[i] + '</li>';
+            }
+            oUl2.innerHTML = html;
+        }
+
+        function fn3(data){
+            var oUl3 = document.getElementById('ul3');
+            var html = '';
+            for(var i=0; i<data.length; i++){
+                html += '<li>' + data[i] + '</li>';
+            }
+            oUl3.innerHTML = html;
+        }
+    </script>
+    <!--<script src="2.txt"></script>-->
+    <script>
+        window.onload = function () {
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oBtn3 = document.getElementById('btn3');
+
+            oBtn1.onclick = function () {
+                //当按钮点击的时候再去加载远程资源让它执行
+                var oScript = document.createElement('script');
+                oScript.src = 'getData.php?t=num&callback=fn1';
+                document.body.appendChild(oScript);
+            }
+
+            oBtn2.onclick = function () {
+                //当按钮点击的时候再去加载远程资源让它执行
+                var oScript = document.createElement('script');
+                oScript.src = 'getData.php?t=str&callback=fn2';
+                document.body.appendChild(oScript);
+            }
+
+            oBtn3.onclick = function () {
+                //当按钮点击的时候再去加载远程资源让它执行
+                var oScript = document.createElement('script');
+                oScript.src = 'getData.php?callback=fn3';
+                document.body.appendChild(oScript);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="btn1" value="加载数字">
+    <ul id="ul1"></ul>
+    <input type="button" id="btn2" value="加载字母">
+    <ul id="ul2"></ul>
+    <input type="button" id="btn3" value="加载数字">
+    <ul id="ul3"></ul>
+</body>
+</html>
