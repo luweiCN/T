@@ -34,7 +34,7 @@ canvas就是一个HTML5的标签，它有width、height这样的属性，把它�
 </body>
 </html>
 ```
-![Alt text](./1498722456751.png)
+![](http://i.imgur.com/fCLvEL9.png)
 
 ## 第2章 HTML5绘制几何图形
 ### 1.HTML5绘制几何图形的两个方法
@@ -86,7 +86,7 @@ HTML5并没有直接提供其它几何图形（圆形、椭圆、三角）等方
 </body>
 </html>
 ```
-![Alt text](./1498722368832.png)
+![](http://i.imgur.com/3rOiEUH.png)
 
 ## 第3章 绘制字符串
 ### 1.绘制文字的两个方法
@@ -145,4 +145,4 @@ top|hanging|middle|alphabetic|bottom
 </body>
 </html>
 ```
-![Alt text](./1498728250062.png)
+![](http://i.imgur.com/4sBCD0L.png)
