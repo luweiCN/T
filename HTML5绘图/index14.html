@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script language="JavaScript">
+        function init()
+        {
+            var can1 = document.getElementById("can1");
+            var ctx1 = can1.getContext("2d");
+            var can2 = document.getElementById("can2");
+            var ctx2 = can2.getContext("2d");
+            var can3 = document.getElementById("can3");
+            var ctx3 = can3.getContext("2d");
+            var can4 = document.getElementById("can4");
+            var ctx4 = can4.getContext("2d");
+
+            var img = new Image();
+            img.src = 'img/pattern.png';
+
+            var pat1= ctx1.createPattern(img,'no-repeat');
+            var pat2= ctx2.createPattern(img,'repeat');
+            var pat3= ctx3.createPattern(img,'repeat-x');
+            var pat4= ctx4.createPattern(img,'repeat-y');
+
+            ctx1.fillStyle = pat1;
+            ctx1.fillRect(0,0,400,90)
+
+            ctx2.fillStyle = pat2;
+            ctx2.fillRect(0,0,400,90)
+
+            ctx3.fillStyle = pat3;
+            ctx3.fillRect(0,0,400,90)
+
+            ctx4.fillStyle = pat4;
+            ctx4.fillRect(0,0,400,90)
+
+        }
+    </script>
+</head>
+<body onload="init();">
+    <p>Canvas:no-repeat</p>
+    <canvas id="can1" width="400" height="90" style="border: 1px #000 solid;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <p>Canvas:repeat</p>
+    <canvas id="can2" width="400" height="90" style="border: 1px #000 solid;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <p>Canvas:repeat-x</p>
+    <canvas id="can3" width="400" height="90" style="border: 1px #000 solid;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <p>Canvas:repeat-y</p>
+    <canvas id="can4" width="400" height="90" style="border: 1px #000 solid;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+</body>
+</html>

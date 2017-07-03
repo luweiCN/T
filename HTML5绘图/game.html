@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        var maps = new Array();
+
+        //初始化
+        var black = new Image();
+        var white = new Image();
+        black.src = 'img/black.png';
+        white.src = 'img/white.png';
+        var t=1; //当前棋子，1=白子，2=黑子;默认白子先下
+
+        var numX = 1; //水平方向计数
+        var numY = 1; //垂直方向计数
+        var numL = 1; //左对角线方向计数
+        var numR = 1; //右对角线方向计数
+
+        //初始化棋盘
+        function init() {
+            var can = document.getElementById('can');
+            var ctx = can.getContext('2d');
+
+            ctx.strokeStyle = '#fff';
+            for(var i=0; i<15; i++){
+                maps[i] = new Array();
+                for(var j=0; j<15; j++){
+                    maps[i][j] = 0;
+                    ctx.strokeRect(j*40, i*40, 40, 40);
+                }
+            }
+        }
+
+        function play(e) {
+            var can = document.getElementById('can');
+            var ctx = can.getContext('2d');
+
+            //鼠标点击在canvas中的坐标
+            var clickX = e.clientX - can.offsetLeft;
+            var clickY = e.clientY - can.offsetTop;
+
+            //根据坐标计算点击触发具体的某行某列
+            var row = clickX%40<20? Math.floor(clickX/40): Math.ceil(clickX/40); //行
+            var col = clickY%40<20? Math.floor(clickY/40): Math.ceil(clickY/40); //列
+
+            //判断当前位置有没有棋子
+            if(maps[row][col] != 0){
+                alert('当前位置已有棋子，请在其他位置下子');
+                return;
+            }
+
+            //根据行列画图
+            if(t == 1){
+                ctx.drawImage(white, row*40-18, col*40-18);
+                maps[row][col] = t;
+                isWin(ctx, row, col);
+                t = 2;
+                return;
+            }
+            if(t == 2){
+                ctx.drawImage(black, row*40-18, col*40-18);
+                maps[row][col] = t;
+                isWin(ctx, row, col);
+                t = 1;
+                return;
+            }
+        }
+
+        function isWin(ctx, r, c) {
+            var row;
+            var col;
+            //水平方向计数
+            for(row = r,col = c-1;col-1>1&&maps[row][col] == t; col--){
+                numY++;
+            }
+            for(row = r,col = c+1;col+1<15&&maps[row][col] == t; col++){
+                numY++;
+            }
+
+            //垂直方向计数
+            for(row = r-1,col = c;row-1>1&&maps[row][col] == t; row--){
+                numX++;
+            }
+            for(row = r+1,col = c;row+1<15&&maps[row][col] == t; row++){
+                numX++;
+            }
+
+            //左上到右下
+            for(row = r-1,col = c-1;row-1>1&&col-1>1&&maps[row][col] == t; row--, col--){
+                numL++;
+            }
+            for(row = r+1,col = c+1;row+1<15&&col+1<15&&maps[row][col] == t; row++, col++){
+                numL++;
+            }
+
+            //右上到左下
+            for(row = r-1,col = c+1;row-1>1&&col+1<15&&maps[row][col] == t; row--, col++){
+                numR++;
+            }
+            for(row = r+1,col = c-1;row+1<15&&col-1>1&&maps[row][col] == t; row++, col--){
+                numR++;
+            }
+
+//            alert('numX=' + numX + 'numY=' + numY + 'numL=' + numL +'numR=' + numR + 't=' + t);
+            if(numL==5||numR==5||numX==5||numY==5&&t==1){
+                alert('白子赢了');
+                if(confirm('是否继续？')){
+                    ctx.clearRect(0, 0, 600, 600);
+                    init();
+                } else {
+                    play = null;
+                };
+            } else if(numL==5||numR==5||numX==5||numY==5&&t==2){
+                alert('黑子赢了');
+                if(confirm('是否继续？')){
+                    ctx.clearRect(0, 0, 600, 600);
+                    init();
+                } else {
+                    play = null;
+                };
+            }
+            return numL=1,numR=1,numX=1,numY=1;
+
+        }
+
+
+    </script>
+</head>
+<body onload="init();">
+    <div style="width: 600px;height: 600px; margin: 30px auto; border: 1px #000 solid;background: url('img/bak.jpg')">
+        <canvas id="can" width="600" height="600" onclick="play(event)"></canvas>
+    </div>
+</body>
+</html>

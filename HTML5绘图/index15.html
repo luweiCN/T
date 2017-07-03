@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            var can = document.getElementById('can');
+            var ctx = can.getContext('2d');
+
+            var img = new Image();
+            img.src = 'img/ym.jpg';
+            img.onload = function () {
+
+                //画原图大小，位置是20*20
+                ctx.drawImage(img, 20,20);
+
+                //改变图像显示大小为80*120，位置是300*20
+                ctx.drawImage(img, 300, 20, 80, 120);
+
+                //截取原图60*60开始的100*120的矩形区域放在画布的500*20位置，并把图像显示大小设置为200*240
+                ctx.drawImage(img, 60, 60, 100, 120, 500, 20, 200, 240);
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+    <canvas id="can" width="800" height="400" style="border: 1px #000 solid; margin: 30px auto"></canvas>
+</body>
+</html>
