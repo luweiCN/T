@@ -483,4 +483,400 @@ ctx.createRadialGradient(x0,y0,r0,x1,y1,r1);
 * y1:渐变的结束圆的 y 坐标
 * r1:结束圆的半径
 ### 4.使用图案填充
+使用团填充用到的是`createPattern()`方法；`createPattern()`方法在指定的方向内重复指定的元素。元素可以是图片、视频，或者其他 `<canvas>`元素。被重复的元素可用于绘制/填充矩形、圆形或线条等等。
+**语法：**
+```
+ctx.createPattern(image,"repeat|repeat-x|repeat-y|no-repeat");
+```
+**参数说明：**
+* image:规定要使用的图片、画布或视频元素。
+* repeat:默认。该模式在水平和垂直方向重复。
+* repeat-x:该模式只在水平方向重复。
+* repeat-y:该模式只在垂直方向重复。
+* no-repeat:该模式只显示一次（不重复）。
+### 4.代码演示
+#### （1）线性渐变
+```
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script language="JavaScript">
+        function init()
+        {
+            var can=document.getElementById("can");
+            var ctx=can.getContext("2d");
+
+            var gred = ctx.createLinearGradient(0, 0, 200, 85);
+            gred.addColorStop(0.3, '#eee');
+            gred.addColorStop(0.6, '#aaa');
+            gred.addColorStop(0.9, 'orange');
+
+            ctx.fillStyle = gred;
+            ctx.fillRect(60, 60, 200, 85);
+        }
+    </script>
+</head>
+<body onload="init();">
+    <canvas id="can" width="400" height="300" style="border: 1px #000 solid;"></canvas>
+</body>
+</html>
+```
+![](http://i.imgur.com/jPR5hjV.png)
+#### （2）圆形渐变（径向渐变）
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script language="JavaScript">
+        function init()
+        {
+            var can=document.getElementById("can");
+            var ctx=can.getContext("2d");
+
+            var gred = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+            gred.addColorStop(0, 'red');
+            gred.addColorStop(1, '#fff');
+
+            ctx.fillStyle = gred;
+            ctx.fillRect(10, 10, 150, 100);
+
+            var gred2 = ctx.createRadialGradient(200, 200, 5, 200, 200, 80);
+            gred2.addColorStop(0, '#fff');
+            gred2.addColorStop(1, '#f00');
+
+            ctx.beginPath();
+            ctx.arc(200, 200, 80, 0, 2*Math.PI);
+            ctx.fillStyle = gred2;
+            ctx.fill();
+        }
+    </script>
+</head>
+<body onload="init();">
+    <canvas id="can" width="400" height="300" style="border: 1px #000 solid;"></canvas>
+</body>
+</html>
+```
+![](http://i.imgur.com/fqcnoGu.png)
+#### （3）填充图案
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script language="JavaScript">
+        function init()
+        {
+            var can1 = document.getElementById("can1");
+            var ctx1 = can1.getContext("2d");
+            var can2 = document.getElementById("can2");
+            var ctx2 = can2.getContext("2d");
+            var can3 = document.getElementById("can3");
+            var ctx3 = can3.getContext("2d");
+            var can4 = document.getElementById("can4");
+            var ctx4 = can4.getContext("2d");
+
+            var img = new Image();
+            img.src = 'img/pattern.png';
+
+            var pat1= ctx1.createPattern(img,'no-repeat');
+            var pat2= ctx2.createPattern(img,'repeat');
+            var pat3= ctx3.createPattern(img,'repeat-x');
+            var pat4= ctx4.createPattern(img,'repeat-y');
+
+            ctx1.fillStyle = pat1;
+            ctx1.fillRect(0,0,400,90)
+
+            ctx2.fillStyle = pat2;
+            ctx2.fillRect(0,0,400,90)
+
+            ctx3.fillStyle = pat3;
+            ctx3.fillRect(0,0,400,90)
+
+            ctx4.fillStyle = pat4;
+            ctx4.fillRect(0, 0, 400, 90)
+        }
+    </script>
+</head>
+<body onload="init();">
+    <p>Canvas:no-repeat</p>
+    <canvas id="can1" width="400" height="90" style="border: 1px #000 solid;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <p>Canvas:repeat</p>
+    <canvas id="can2" width="400" height="90" style="border: 1px #000 solid;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <p>Canvas:repeat-x</p>
+    <canvas id="can3" width="400" height="90" style="border: 1px #000 solid;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <p>Canvas:repeat-y</p>
+    <canvas id="can4" width="400" height="90" style="border: 1px #000 solid;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+</body>
+</html>
+```
+![](http://i.imgur.com/swjwvCD.png)
+## 第9章 HTML5绘制位图
+### 1.HTML5绘制位图的方法
+HTML5绘制位图就是用`drawImage()`方法；`drawImage()`方法在画布上绘制图像、画布或视频。`drawImage()`方法也能够绘制图像的某些部分，以及增加或减少图像的尺寸。
+**语法：**
+```
+ctx.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+```
+**参数说明：**
+* img:规定要使用的图像、画布或视频。
+* sx:可选。开始剪切的 x 坐标位置。
+* sy:可选。开始剪切的 y 坐标位置。
+* swidth:可选。被剪切图像的宽度。
+* sheight:可选。被剪切图像的高度。
+* x:在画布上放置图像的 x 坐标位置。
+* y:在画布上放置图像的 y 坐标位置。
+* width:可选。在画布上的显示宽度。（伸展或缩小图像）
+* height:可选。在画布上的显示高度。（伸展或缩小图像）
+### 2.代码演示
+```
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            var can = document.getElementById('can');
+            var ctx = can.getContext('2d');
+
+            var img = new Image();
+            img.src = 'img/ym.jpg';
+            img.onload = function () {
+
+                //画原图大小，位置是20*20
+                ctx.drawImage(img, 20,20);
+
+                //改变图像显示大小为80*120，位置是300*20
+                ctx.drawImage(img, 300, 20, 80, 120);
+
+                //截取原图60*60开始的100*120的矩形区域放在画布的500*20位置，并把图像显示大小设置为200*240
+                ctx.drawImage(img, 60, 60, 100, 120, 500, 20, 200, 240);
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+    <canvas id="can" width="800" height="400" style="border: 1px #000 solid; margin: 30px auto"></canvas>
+</body>
+</html>
+```
+![](http://i.imgur.com/Y9TrY2Y.png)
+## 第9章 案例：五子棋
+### 1.初始化棋盘
+棋盘用了一张背景图，在600*600的`canvas`画布上绘制了15*15的格子。
+```
+//初始化棋盘
+function init() {
+    var can = document.getElementById('can');
+    var ctx = can.getContext('2d');
+
+    ctx.strokeStyle = '#fff';
+    t = 1;
+    for(var i=0; i<15; i++){
+        maps[i] = new Array();
+        for(var j=0; j<15; j++){
+            maps[i][j] = 0;
+            ctx.strokeRect(j*40, i*40, 40, 40);
+        }
+    }
+}
+```
+`maps`是一个全局的二维数组，分别对应棋盘的每个位置，有三个取值：
+* `0`：表示此处没有棋子
+* `1`: 表示此处有一个白子
+* `2`: 表示此处有一个黑子
+
+`t`是一个全局变量，表示当前是白子走还是黑子走，有两个取值：
+* `1`: 表示下一步是白子走
+* `2`: 表示下一步是黑子走
+### 2.计算下棋的坐标
+```
+function play(e) {
+    var can = document.getElementById('can');
+    var ctx = can.getContext('2d');
+
+    //鼠标点击在canvas中的坐标
+    var clickX = e.clientX - can.offsetLeft;
+    var clickY = e.clientY - can.offsetTop;
+
+    //根据坐标计算点击触发具体的某行某列
+    var row = clickX%40<20? Math.floor(clickX/40): Math.ceil(clickX/40); //行
+    var col = clickY%40<20? Math.floor(clickY/40): Math.ceil(clickY/40); //列
+
+    //判断当前位置有没有棋子
+    if(maps[row][col] != 0){
+        alert('当前位置已有棋子，请在其他位置下子');
+        return;
+    }
+
+    //根据行列画图
+    if(t == 1){
+        ctx.drawImage(white, row*40-18, col*40-18);
+        maps[row][col] = t;
+        isWin(ctx, row, col);
+        t = 2;
+        return;
+    }
+    if(t == 2){
+        ctx.drawImage(black, row*40-18, col*40-18);
+        maps[row][col] = t;
+        isWin(ctx, row, col);
+        t = 1;
+        return;
+    }
+}
+```
+这是程序的核心函数，要完成下棋首先我们要知道我们的鼠标点击的位置，然后计算出对应棋子应该放在哪个格子上：
+* 鼠标点击在canvas中的坐标
+```
+var clickX = e.clientX - can.offsetLeft;
+var clickY = e.clientY - can.offsetTop;
+```
+* 根据坐标计算点击触发具体的某行某列
+```
+var row = clickX%40<20? Math.floor(clickX/40): Math.ceil(clickX/40); //行
+var col = clickY%40<20? Math.floor(clickY/40): Math.ceil(clickY/40); //列
+```
+* 点击之后还需要判断当前位置是不是已经有棋子了
+```
+if(maps[row][col] != 0){
+	alert('当前位置已有棋子，请在其他位置下子');
+	return;
+}
+```
+以上三步都完成了，接下来就要开始根据得到的行列值来画棋子了：
+```
+if(t == 1){
+    ctx.drawImage(white, row*40-18, col*40-18);
+    maps[row][col] = t;
+    isWin(ctx, row, col);
+    t = 2;
+    return;
+}
+if(t == 2){
+    ctx.drawImage(black, row*40-18, col*40-18);
+    maps[row][col] = t;
+    isWin(ctx, row, col);
+    t = 1;
+    return;
+}
+```
+这两个`if`语句结构很相似，分别处理白子和黑子下棋；
+* 根据行列坐标以及t值判断当前是白子还是黑子和下棋的位置并画图
+```
+ctx.drawImage(white, row*40-18, col*40-18);
+```
+* 画完棋子把对应的`maps`数组位置的值置为相应的棋子编号,`isWin`是判断输赢的函数，后面给`t`赋值是实现黑白子交替下棋
+```
+maps[row][col] = t;
+isWin(ctx, row, col);
+t = 2;
+```
+### 3.输赢算法
+```
+function isWin(ctx, r, c) {
+    var row;
+    var col;
+    //水平方向计数
+    for(row = r,col = c-1;col-1>1&&maps[row][col] == t; col--){
+        numY++;
+    }
+    for(row = r,col = c+1;col+1<15&&maps[row][col] == t; col++){
+        numY++;
+    }
+
+    //垂直方向计数
+    for(row = r-1,col = c;row-1>1&&maps[row][col] == t; row--){
+        numX++;
+    }
+    for(row = r+1,col = c;row+1<15&&maps[row][col] == t; row++){
+        numX++;
+    }
+
+    //左上到右下
+    for(row = r-1,col = c-1;row-1>1&&col-1>1&&maps[row][col] == t; row--, col--){
+        numL++;
+    }
+    for(row = r+1,col = c+1;row+1<15&&col+1<15&&maps[row][col] == t; row++, col++){
+        numL++;
+    }
+
+    //右上到左下
+    for(row = r-1,col = c+1;row-1>1&&col+1<15&&maps[row][col] == t; row--, col++){
+        numR++;
+    }
+    for(row = r+1,col = c-1;row+1<15&&col-1>1&&maps[row][col] == t; row++, col--){
+        numR++;
+    }
+
+//            alert('numX=' + numX + 'numY=' + numY + 'numL=' + numL +'numR=' + numR + 't=' + t);
+    if(numL==5||numR==5||numX==5||numY==5&&t==2){
+        alert('黑子赢了');
+        if(confirm('是否继续？')){
+            ctx.clearRect(0, 0, 600, 600);
+            init();
+        } else {
+            play = null;
+        };
+    } else if(numL==5||numR==5||numX==5||numY==5&&t==1){
+        alert('白子赢了');
+        if(confirm('是否继续？')){
+            ctx.clearRect(0, 0, 600, 600);
+            init();
+        } else {
+            play = null;
+        };
+    }
+    return numL=1,numR=1,numX=1,numY=1;
+
+}
+```
+输赢算法的实现很简单，细节就不再赘述，简单说一下：
+* 每下一个棋子，都会以该棋子为中心向它的水平、垂直、左右对角线方向查询，用四个变量存储查询计数的结果；
+* 当在任一方向查询到无棋子或者是颜色不同的棋子，就会停止该方向的查询，进行下一个方向的查询；
+* 否则，继续查询，相应的计数变量自增1；
+* 当所有查询结束时，判断四个计数变量的值，只要有任意一个计数变量的值为5，说明该颜色棋子获胜。
+### 3.功能与不足
+####（1）功能
+* 五子棋的基本功能
+* 当下棋的位置已有棋子时会进行提示下到另一处
+* 当一方获胜，会询问继续还是取消，继续就会清空棋盘；取消不会清空棋盘，但是也无法再下子，要想重新继续必须刷新界面
+* 默认白子先下，当一方获胜，下一局，另一方先下
+#### （2）不足
+* 谷歌浏览器和火狐浏览器对一下语句有不同的解释
+```
+ctx.drawImage(white, row*40-18, col*40-18);
+alert(1);
+```
+谷歌浏览器会先执行`alert(1)`,而火狐浏览器会先执行`ctx.drawImage(white, row*40-18, col*40-18)`，原因可能是谷歌浏览器把`ctx.drawImage(white, row*40-18, col*40-18)`当成了异步操作，而后我在网上搜索了很多资料，关于`drawImage`函数是同步还是异步的资料少之又少，但是我在webstrom中ctrl单击该函数跳到其声明处，也看不出是同步还是异步：
+```
+/**
+@param {Element} img_elem
+@param {Number} dx_or_sx
+@param {Number} dy_or_sy
+@param {Number} [dw_or_sw]
+@param {Number} [dh_or_sh]
+@param {Number} [dx]
+@param {Number} [dy]
+@param {Number} [dw]
+@param {Number} [dh]
+*/
+CanvasRenderingContext2D.prototype.drawImage = function(img_elem,dx_or_sx,dy_or_sy,dw_or_sw,dh_or_sh,dx,dy,dw,dh) {};
+```
+而后在[segmentfault](https://segmentfault.com/q/1010000000708068)上看到有个人说是同步API，如若真实同步的，谷歌浏览器的解释就是错误的。
 
