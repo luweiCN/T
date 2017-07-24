@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>let不受外界影响</title>
+    <script src="../../vendor/traceur.js"></script>
+    <script src="../../vendor/bootstrap.js"></script>
+    <script type="text/traceur">
+        var a = 200;
+        {
+            console.log(a); //undefined
+            let a = 100;
+            console.log(a); //100
+        }
+    </script>
+    <script>
+        for (var i=0; i<5; i++){
+            for (var j=0; j<5 ;j++){
+                console.log(i);
+            }
+        }
+
+        for (var i=0; i<5; i++){
+            for (var i=0; i<5 ;i++){
+                console.log(i);
+            }
+        }
+
+        for (var i=0; i<5; i++){
+            for (let i=0; i<5 ;i++){
+                console.log(i);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
