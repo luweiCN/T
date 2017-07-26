@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div.clockImg{
+            text-align: center;
+            margin: 100px auto 0;
+        }
+
+		div.clockImg img{
+			width: 61px;
+			height: 86px;
+		}
+
+		div.clock{
+			margin: 0 auto;
+			width: 500px;
+			height: 500px;
+		}
+    </style>
+
+    <script>
+        window.onload = function(){
+            FnTime();
+            setInterval(FnTime, 1000);
+        }
+
+       /**
+		* 根据传入的时分秒绘制相应的指针时钟
+		* 备注：这里有一点做的比较精细，就是时针和分针也会在每秒产生一个微小的转动
+		* @param h :小时
+		* @param m :分钟
+		* @p aram s :秒
+		*/
+        function draw(h,m,s) {
+            var can = document.getElementById('myCan');
+            var ctx = can.getContext('2d');
+
+            //清空画布
+            ctx.clearRect(0,0,500,500);
+
+            //时钟表盘轮廓
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(250, 250, 200, 0, 2*Math.PI);
+            ctx.closePath();
+            ctx.stroke();
+
+            //时钟刻度
+            for(var i=0; i<60; i++){
+                if (i%5==0) {
+                    ctx.fillStyle = 'black';
+                } else {
+                    ctx.fillStyle = '#bbb';
+                }
+                ctx.beginPath();
+                ctx.arc(250+Math.sin((i/30)*Math.PI)*190, 250-Math.cos((i/30)*Math.PI)*190, 3, 0, 2*Math.PI);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            //时钟数字
+            for(var i=0; i<12; i++){
+                ctx.fillStyle = 'black';
+                ctx.font = '20px 微软雅黑 ';
+                ctx.textAlign = 'center';
+                ctx.textBaseAlign = 'center'
+                ctx.fillText(i+1,250+Math.sin(((i+1)/6)*Math.PI)*170, 260-Math.cos(((i+1)/6)*Math.PI)*170);
+
+            }
+
+            //绘制指针
+            //分针
+            ctx.strokeStyle = 'blue';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(250+Math.sin((m/30 + s/1800)*Math.PI)*190, 250-Math.cos((m/30 + s/1800)*Math.PI)*190);
+            ctx.lineTo(250-Math.sin((m/30 + s/1800)*Math.PI)*30, 250+Math.cos((m/30 + s/1800)*Math.PI)*30);
+            ctx.closePath();
+            ctx.stroke();
+            //时针
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 6;
+            ctx.beginPath();
+            ctx.moveTo(250+Math.sin((h/6 + m/360 + s/21600)*Math.PI)*150, 250-Math.cos((h/6 + m/360 + s/21600)*Math.PI)*150);
+            ctx.lineTo(250-Math.sin((h/6 + m/360 + s/21600)*Math.PI)*15, 250+Math.cos((h/6 + m/360 + s/21600)*Math.PI)*15);
+            ctx.closePath();
+            ctx.stroke();
+            //秒针
+            ctx.strokeStyle = 'red';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(250+Math.sin(s/30*Math.PI)*190, 250-Math.cos(s/30*Math.PI)*190);
+            ctx.lineTo(250-Math.sin(s/30*Math.PI)*30, 250+Math.cos(s/30*Math.PI)*30);
+            ctx.closePath();
+            ctx.stroke();
+
+            //表盘圆心
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(250, 250, 2, 0, 2*Math.PI);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        /**
+         * 主函数，获取当前时间的时分秒并且生成相应的图片时钟
+         */
+        function FnTime(){
+            var aImg = document.getElementsByTagName('img');
+            var aUrl = ['./img/0.JPG','./img/1.JPG','./img/2.JPG','./img/3.JPG','./img/4.JPG','./img/5.JPG','./img/6.JPG','./img/7.JPG','./img/8.JPG','./img/9.JPG','./img/colon.JPG']
+            var num = 0;
+
+            var myTime = new Date();
+            var iHours = myTime.getHours();
+            var iMinutes = myTime.getMinutes();
+            var iSeconds = myTime.getSeconds();
+
+
+            //画指针时钟
+            draw(iHours, iMinutes, iSeconds);
+
+            //把时间转化成类似：‘132632’（13：26：32）字符串形式
+            var str = toTwo(iHours) + toTwo(iMinutes) + toTwo(iSeconds);
+
+            //遍历字符串，根据每个字符选择相应的图片
+            for(var i=0; i<aImg.length; i++){
+                if(i ==2 || i == 5){
+                    aImg[i].src = aUrl[10];
+                    i++;
+                }
+                aImg[i].src = aUrl[str.charAt(num)];
+                num++;
+            }
+        }
+
+        /**
+         * 是把只有一位数的时分秒变成类似于：‘02’，‘05’之类的两个字符的字符串
+         * @param n :需要转化的时、分、秒
+         * @returns {string} ：转化之后的字符串
+         */
+        function toTwo(n){
+            return n<10? '0' + n: '' + n;
+        }
+
+    </script>
+</head>
+<body>
+	<div class="clockImg">
+	<img src="./img/0.JPG" alt="">
+	<img src="./img/0.JPG" alt="">
+	<img src="./img/0.JPG" alt="">
+	<img src="./img/0.JPG" alt="">
+	<img src="./img/0.JPG" alt="">
+	<img src="./img/0.JPG" alt="">
+	<img src="./img/0.JPG" alt="">
+	<img src="./img/0.JPG" alt="">
+	</div>
+	<div class="clock">
+		<canvas id="myCan" width="500" height="500"></canvas>
+	</div>
+
+
+</body>
+</html>
