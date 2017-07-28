@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>const数组</title>
+    <script>
+        const arr = [];
+        console.log(arr,arr.length);
+        console.log('------------');
+
+        arr.push('hello world!');
+        console.log(arr,arr.length);
+        console.log('------------');
+
+        arr.length = 0;
+        console.log(arr,arr.length);
+        console.log('------------');
+
+        arr.push('hello luwei!');
+        console.log(arr,arr.length);
+        console.log('------------');
+
+        //错误用法
+        arr = ['luwei'];
+        console.log(arr,arr.length); //Assignment to constant variable
+        console.log('------------');
+
+
+        //const数组的值可以改变，但必须要先清空数组,然后用push方法去添加
+    </script>
+</head>
+<body>
+
+</body>
+</html>

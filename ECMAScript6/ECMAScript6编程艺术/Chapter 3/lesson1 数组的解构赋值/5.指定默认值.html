@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>指定默认值</title>
+    <script>
+        var [tmp = 'string'] = [];
+        console.log(tmp); //string
+
+        var [tmp2 = 'string'] = ['tmpString'];
+        console.log(tmp2); //tmpString
+
+        var [x= 'aaa', y] = ['bbb'];
+        console.log(x); //bbb
+        console.log(y); //undefined
+
+        var [m, n = 'aaa'] = ['bbb'];
+        console.log(m); //bbb
+        console.log(n); //aaa
+
+        var [p, q = 'aaa'] = ['bbb', undefined];
+        console.log(p); //bbb
+        console.log(q); //aaa
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

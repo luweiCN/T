@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>从函数返回多个值-返回数组</title>
+    <script>
+        function fun() {
+            return [1, 2, 3];
+        }
+
+        console.log(fun()); //[1, 2, 3]
+        console.log(fun()[1]); //2
+
+        var [x, y, z] = fun();
+        console.log(x); //1
+        console.log(y); //2
+        console.log(z); //3
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

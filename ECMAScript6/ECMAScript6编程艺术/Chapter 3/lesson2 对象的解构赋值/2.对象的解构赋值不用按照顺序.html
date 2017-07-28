@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>对象的解构赋值不用按照顺序</title>
+    <script>
+        var {name, age, id} = {id: '007', name:'luwei', age:24};
+        console.log(name); //luwei
+        console.log(age); //24
+        console.log(id); //007
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

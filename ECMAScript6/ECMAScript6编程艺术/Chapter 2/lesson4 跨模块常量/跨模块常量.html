@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>跨模块常量</title>
+    <script>
+        //module1.js
+        export const intVariantName = 100; //从module1.js导出
+        export const floastVariantName = 3.14159265; //从module1.js导出
+        export const charVariantName = 'variantValue'; //从module1.js导出
+
+        //use1.js
+        import * as variant from './module1.js'  //全部引入
+        console.log(variant.intVariantName); //100
+        console.log(variant.floastVariantName); //3.14159265
+        console.log(variant.charVariantName); //variantValue
+
+        //use2.js
+        import {floastVariantName,charVariantName} as variant from './module1.js'  //部分引入
+        console.log(variant.floastVariantName); //3.14159265
+        console.log(variant.charVariantName); //variantValue
+
+        //use3.js
+        import intVariantName as variant from './module1.js'  //只引入一个
+        console.log(variant.intVariantName); //使用,100
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

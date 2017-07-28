@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>变量名与属性名不一致</title>
+    <script>
+        var {person_name, person_age, person_id} = {id: '007', name:'luwei', age:24};
+        console.log(person_name); //undefined
+        console.log(person_age); //undefined
+        console.log(person_id); //undefined
+
+        var {name: person_name, age: person_age, id: person_id} = {id: '007', name:'luwei', age:24};
+        console.log(person_name); //luwei
+        console.log(person_age); //24
+        console.log(person_id); //007
+
+        let object = {first: "hello", last: 'world'};
+        let {first: firstName, last: lastName} = object;
+        console.log(firstName); //hello
+        console.log(lastName); //world
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

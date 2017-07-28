@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>遍历Map结构</title>
+    <script>
+        var map = new Map();
+        map.set('id', '007');
+        map.set('name', 'luwei');
+
+        console.log(map); //{"id" => "007", "name" => "luwei"}
+        console.log(typeof map); //object
+
+        //获取键名和键值
+        for (let [key, value] of map){
+            console.log(key + ' is ' + value);
+        }
+        //id is 007
+        //name is luwei
+
+        //获取键名
+        for (let [key] of  map){
+            console.log(key);
+        }
+        //id
+        //name
+
+        //获取键值
+        for (let [ ,value] of map){
+            console.log(value);
+        }
+        //007
+        //luwei
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

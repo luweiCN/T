@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>全局变量属性</title>
+    <script>
+        //ES6规定，var命令和function命令声明的全局变量，属于全局对象的属性；let命令、const命令、class命令声明的全局变量，不属于全局对象的属性。
+        var variantName = "variantValue";
+        console.log(variantName); //浏览器环境:variantValue
+        console.log(window.variantName); //浏览器环境:variantValue
+//        console.log(global.variantName); //node环境:variantValue
+        console.log(this.variantName); //通用环境:variantValue
+
+        let letName = 'letValue';
+        console.log(letName); //浏览器环境:letValue
+        console.log(window.letName); //浏览器环境:undefined
+//        console.log(global.letName); //node环境:undefined
+        console.log(this.letName); //通用环境:undefined
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

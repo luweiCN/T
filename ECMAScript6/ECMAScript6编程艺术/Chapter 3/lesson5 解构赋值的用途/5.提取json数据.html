@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>提取json数据</title>
+    <script>
+        var jsonDate ={
+            id: '007',
+            name: 'luwei',
+            age: 24,
+            score: {
+                Chinese: 121,
+                Math: 138,
+                English: 132
+            }
+        };
+
+        console.log('ES5:');
+        console.log('My Name:' + jsonDate.name); //My Name:luwei
+        console.log('My English Score:' + jsonDate.score.English); //My English Score:132
+
+        console.log('ES6:');
+        let {name: myName, score:{English:englishScore}} = jsonDate;
+        console.log(myName); //luwei
+        console.log(englishScore); //132, 多层对象的解构
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

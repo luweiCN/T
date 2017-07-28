@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>对象解构默认值条件</title>
+    <script>
+        var {x = 3} = {x :undefined};
+        console.log(x); //3
+
+        var {y = 4} = {y :null};
+        console.log(y); //null
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
