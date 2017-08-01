@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 函数的扩展
+         *  1 为函数参数指定默认值
+         *  2 函数的 rest 参数
+         *  3 箭头函数
+         */
+
+        // ------------------------------------------------
+        //1.为函数参数指定默认值
+        function fn(a, b) {
+            a = a || 10;
+            b = b || 20;
+            console.log(a + b);
+        }
+        fn(); //30
+        fn(0, 10); //20
+
+        function fn1(a = 10, b = 20) {
+            console.log(a + b);
+        }
+        fn1(); //30
+        fn1(0, 10); //10
+
+        // ------------------------------------------------
+        //2.函数的 rest 参数
+        //rest 参数形式为（“...变量名”），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
+        function sum() {
+            var args = arguments;
+            var res = 0;
+            for(var i=0; i<args.length; i++){
+                res += args[i];
+            }
+            console.log(res);
+        }
+        sum(1, 2, 3, 4, 5); //15
+
+        function sum1(a,...arr) {
+            var res = a;
+            for(var i=0; i<arr.length; i++){
+                res += arr[i];
+            }
+            console.log(res);
+        }
+        sum1(1, 2, 3, 4, 5, 6, 7); //28
+        sum1(10, 1, 2, 3, 4, 5, 6, 7); //38
+
+        // ------------------------------------------------
+        //2.箭头函数
+        // 使用“箭头”（=>）定义函数。
+        const fun = a => a;
+        const fun2 = function (a) {
+            return a;
+        }
+        console.log(fun(1)); //1
+        console.log(fun2(1)); //1
+
+        const fun3 = (a, b) => a + b;
+        console.log(fun3(1, 2)); //3
+
+        const fun4 = (a, b) => {
+            a = a * 2;
+            b = b * 3;
+            return a + b;
+        };
+        console.log(fun4(1, 2)); //8
+
+        const fun5 = (a, b) => ({a, b});
+        console.log(fun5(1, 2)); //{a: 1, b: 2}
+
+        var arr = arr1 = [5, 4, 3, 2, 1];
+        arr.sort(function (a, b) {
+            return a - b;
+        })
+        console.log(arr); //[1, 2, 3, 4, 5]
+
+        arr1.sort((a, b) => a - b);
+        console.log(arr1); //[1, 2, 3, 4, 5]
+
+        // 1 箭头函数体内没有自己的this对象，所以在使用的时候，其内部的this就是定义时所在环境的对象，而不是使用时所在环境的对象。
+        // 不能给箭头函数使用 call apply bind 去改变其内部的this指向
+        function fun6() {
+            setTimeout(function () {
+                console.log(this);
+            }, 1000);
+            setTimeout(() => {
+                console.log(this);
+            }, 1000);
+        }
+        var obj = {a: 1};
+        fun6.call(obj);
+        //Window {frames: Window, postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, …}
+        //{a: 1}
+
+        // 2 箭头函数体内没有arguments对象，如果要用，可以用Rest参数代替。
+        function fun7() {
+            setTimeout(() => {
+                console.log(arguments);
+            }, 1000);
+        }
+        fun7(1, 2, 3); //[1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+        const fun8 = (...arr) => arr;
+        console.log(fun8(1, 2, 3, 4)); //[1, 2, 3, 4]
+
+        // 3 不可以当作构造函数，不可以使用new命令，否则会抛出一个错误。
+        const Fn = (a, b) => a + b;
+        const f = new Fn(1, 2); //Uncaught TypeError: Fn is not a constructor
+
+        // 4.箭头函数不能当作Generator函数
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

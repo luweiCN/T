@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <!--<script src="./js/bundle.js"></script>-->
+</body>
+<script>
+    /**
+     * class 的继承等相关知识
+     *
+     * - 子类继承父类使用extends关键字
+     * - 为父类指定静态方法，使用static关键字
+     *
+     * super
+     *  - 在构造函数中可以当作一个函数来使用，相当于调用父类的构造函数
+     *  - 在原型方法中，可以当作一个对象来使用，相当于父类的原型对象，并且会自动绑定this到子类上
+     */
+
+        // extends、 static、 super
+
+    const canvas = document.querySelector('#canvas');
+    const ctx = canvas.getContext('2d');
+
+    const w = canvas.width = 600;
+    const h = canvas.height = 400;
+
+    class Ball {
+        constructor(x, y, r){
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.color = `rgb(${~~Ball.rpFn([55, 255])}, ${~~Ball.rpFn([55, 255])}, ${~~Ball.rpFn([55, 255])})`;
+            return this;
+        }
+
+        render(ctx){
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(0, 0, this.r, 0, 2*Math.PI);
+            ctx.fill();
+            ctx.restore();
+            return this;
+        }
+
+        static rpFn(arr){
+            //Ball.rpFn([1,10])
+
+            let max = Math.max(...arr),
+                min = Math.min(...arr);
+            return Math.random()*(max - min) + min;
+        }
+    };
+
+//    const ball1 = new Ball(100, 100, 30).render(ctx);
+    class SuperBall extends Ball {
+        constructor(x, y, r){
+            super(x, y, r);
+            this.vy = SuperBall.rpFn([2, 4]);
+            this.g = SuperBall.rpFn([0.2, 0.4]);
+            this.a = 0;
+            return this;
+        }
+
+        move(ctx){
+            this.y += this.vy;
+            this.vy += this.g;
+
+            let current = this.vy * -0.75;
+
+            if (this.y + this.r >= h){
+                this.y = h - this.r;
+
+                if(Math.abs(current - this.a) < 0.01) return false;
+                this.a = this.vy *= -0.75;
+            }
+
+            ctx.clearRect(0, 0, w, h);
+            super.render(ctx);
+
+            return true;
+        }
+    };
+//    const ball1 = new SuperBall(100, 100, 30).render(ctx);
+
+    let ball, timer;
+
+    canvas.onclick = function (e) {
+        let x = e.offsetX,
+            y = e.offsetY;
+
+        let r = ~~Ball.rpFn([25, 55]);
+
+//        ctx.clearRect(0, 0, w, h);
+        ball = new SuperBall(x, y, r).render(ctx);
+
+        ballMove();
+    }
+
+    function ballMove() {
+        timer = window.requestAnimationFrame(ballMove);
+
+        if(!ball.move(ctx)){
+            window.cancelAnimationFrame(timer);
+        }
+    }
+</script>
+</html>

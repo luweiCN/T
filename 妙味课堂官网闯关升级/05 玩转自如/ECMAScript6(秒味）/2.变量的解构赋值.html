@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        //变量的解构赋值
+
+        /**
+         *  基本概念
+         *  本质上就是一种匹配模式，只要等号两边的模式相同，那么左边的变量就可以被赋予对应的值
+         * 1.数组的解构赋值
+         * 2.对象的解构赋值
+         * 3.基本类型的解构赋值
+         */
+
+        // ----------------------------------------------------
+        // 1.数组的解构赋值
+        /*
+        let a = 1;
+        let b = 2;
+        let c = 3;
+
+        let [x, y, z] = [a, b, c];
+
+        console.log(x, y, z); //1 2 3
+        */
+
+        /*
+        let [a, [[b], c]] = [1, [[2], 3]];
+        console.log(a, b, c); //1 2 3
+        */
+
+        /*
+        let [, , c] = [1, 2, 3];
+        console.log(c);
+        */
+
+        /*
+        let  [x] = [];
+        console.log(x) //undefined
+        */
+
+        /*
+        let [x, y = 1] = [2];
+        console.log(x, y); //2 1
+        */
+
+        // ----------------------------------------------------
+        // 2.对象的解构赋值
+
+        /*
+        let {a, b} = {b: 'bbb', a: 'aaa'};
+        console.log(a, b); //aaa bbb
+        */
+
+        /*
+        let {a:b} = {a:1};
+        console.log(b); //1
+        console.log(a); //Error
+        */
+
+        // ----------------------------------------------------
+        // 3.基本类型的解构赋值
+
+        /*
+        let [a, b, c, d] = '1234';
+        console.log(a, b, c, d); //1 2 3 4
+        console.log(typeof a, typeof b, typeof c, typeof d); //string string string string
+        */
+
+        /*
+        let {length:len} = 'luwei';
+        console.log(len); //5
+        */
+
+        /*
+        let {toString: ts} = 1;
+        let {toString: bs} = true;
+        console.log(ts, bs); //ƒ toString() { [native code] } ƒ toString() { [native code] }
+        console.log( ts === Number.prototype.toString) //true
+        console.log( bs === Boolean.prototype.toString) //true
+        */
+
+        /*
+        let [a] = null; //null undefined不能进行解构赋值
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        /**
+         * Symbol
+         */
+
+        /**
+         * 1 什么是 Symbol ?
+         *  Symbol，表示独一无二的值。它是 JS 中的第七种数据类型。
+         */
+
+        // 基本的数据类型： Null Undefined Number Boolean String Symbol
+        // 引用数据类型：Object
+
+        let s1 = Symbol();
+        let s2 = Symbol();
+        console.log(typeof s1); //'symbol'
+        console.log(s1 === s2); //false
+
+        // Symbol 函数前不能使用 new 否则会报错，原因在于 Symbol 是一个原始类型的值，不是对象。
+        /*
+        let s3 = new Symbol(); //Uncaught TypeError: Symbol is not a constructor
+        */
+
+        // Symbol 函数接收一个字符串作为参数，表示对Symbol的描述，主要是为了在控制台显示，或者转为字符串的时候，比较容易区分
+        console.log(s1); //Symbol()
+        console.log(s2); //Symbol()
+
+        let s4 = Symbol('luwei');
+        let s5 = Symbol('beyi');
+        console.log(s4, s5); //Symbol(luwei) Symbol(beyi)
+
+        console.log(Symbol('luwei') === Symbol('luwei')); //false
+
+        /**
+         * 2 Symbol 数据类型的转换
+         */
+        console.log(String(s4)); //'Symbol(luwei)'
+        console.log(s5.toString()); //'Symbol(beyi)'
+        console.log(!!Symbol()); //true
+
+        //不能做任何运算。
+        /*
+        console.log(Number(Symbol())); //Uncaught TypeError: Cannot convert a Symbol value to a number
+        */
+        /*
+        console.log(Symbol('luwei') + 'shuaige'); //Uncaught TypeError: Cannot convert a Symbol value to a string
+        */
+        /*
+        console.log(Symbol('luwei') * 100); //Uncaught TypeError: Cannot convert a Symbol value to a number
+        */
+
+        /**
+         * 3 作为对象的属性名
+         */
+        let yyy = Symbol('yyy');
+        const obj = {};
+        obj[yyy] = 'hello';
+        console.log(obj); //{Symbol(yyy): "hello"}
+        console.log(obj[yyy]); //hello
+        console.log(obj.yyy); //undefined
+
+        let ss = Symbol('ss');
+        const data = {
+            [ss]: 'luwei'
+        };
+        console.log(data); //{Symbol(ss): "luwei"}
+        console.log(data[ss]) //luwei
+
+        const data2 = {
+            [ss]:'luwei',
+            [Symbol()]: 123,
+            a: 1,
+            b: 2
+        }
+        console.log(data2); //{Symbol(): 123}
+        console.log(data2[Symbol()]); //undefined
+        console.log(data2['Symbol()']); //undefined
+
+        // 不能被for...in循环遍，历虽然不能被遍历，但是也不是私有的属性，可以通过Object.getOwnPropertySymbols方法获得一个对象的所有的Symbol属性
+        for (let i in data2){
+            console.log(i);
+        }
+        //a
+        //b
+
+        console.log(Object.getOwnPropertySymbols(data2)); // [Symbol(ss), Symbol()]
+
+        console.log(data2[Object.getOwnPropertySymbols(data2)[0]]); //luwei
+        console.log(data2[Object.getOwnPropertySymbols(data2)[1]]); //123
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+    <ui>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ui>
+</body>
+<script>
+    /**
+     * 字符串的扩展
+     */
+
+    // 模板字符串
+    /*
+    let html = '<ul>
+                   <li>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                   </li>
+                </ul>'; //Uncaught SyntaxError: Invalid or unexpected token
+    */
+
+    let flag = true;
+    let html = `<ul>
+                      <li>
+                        <span>${'首页'}</span>
+                        <span></span>
+                        <span></span>
+                        <span class="${flag? 'show': 'hide'}"></span>
+                        <span></span>
+                      </li>
+                    </ul>`;
+
+    console.log(html);
+
+    /**
+     * 1 repeat
+     * 2 includes() startsWith() endsWith()
+     */
+    let str1 = 'a';
+    let str2 = str1.repeat(3);
+    console.log(str2); //aaa
+
+    let str = 'luwei';
+    console.log(str.includes('lu')); //true
+    console.log(str.includes('lw')); //false
+
+    console.log(str.startsWith('l')); //true
+    console.log(str.startsWith('w')); //false
+
+    console.log(str.endsWith('i')); //true
+    console.log(str.endsWith('u')); //false
+
+    /**
+     * 数组的扩展
+     */
+    //方法一：Array.from()
+    var lis = document.querySelectorAll('li');
+    console.log(Array.isArray(lis)); //false
+    var lis2 = Array.from(lis);
+    console.log(lis2); //[li, li, li, li, li]
+    console.log(Array.isArray(lis2)); //true
+
+    //方法一：Array.of()
+    const arr = Array.of(1);
+    console.log(arr); //[1]
+
+    //方法二：find() findIndex()
+    let arr1 = [1, 1, 2, 3, 3, 4];
+    let res = arr1.find(function (a) {
+        return a > 2;
+    })
+    console.log(res); //3 第一个3
+
+    let res2 = arr1.findIndex(function (a) {
+        return a == 2;
+    })
+    console.log(res2); //2 返回下标
+
+    let res3 = arr1.find(function (a) {
+        return a == 6;
+    })
+    console.log(res3); //undefined
+
+    let res4 = arr1.findIndex(function (a) {
+        return a == 6;
+    })
+    console.log(res4); //-1
+
+    //方法二：fill()
+    arr1.fill('abc');
+    console.log(arr1); //["abc", "abc", "abc", "abc", "abc", "abc"]
+    arr1.fill('x', 3, 5);
+    console.log(arr1); //["abc", "abc", "abc", "x", "x", "abc"]
+
+    /**
+     * 对象的扩展
+     */
+
+    // 对象的简洁表示法
+    let a = 1, b = 2;
+    const obj = {
+        a : a,
+        b,
+        fn: function () {
+            console.log(1);
+        },
+        fn2(){
+            console.log(2);
+        }
+    }
+    console.log(obj); //{a: 1, b: 2}
+    obj.fn(); //1
+    obj.fn2(); //2
+
+    // Object.is()
+    console.log(Object.is(NaN, NaN)); //true
+    console.log(Object.is(+0, -0)); //false
+
+    //Object.assign() 用于对象的合并，将源对象的所有可枚举属性，复制到目标对象。
+    let obj1 = {a: 1};
+    let obj2 = {a: 2, b: 3};
+    let obj3 = {c: 'abc'};
+    Object.assign(obj1, obj2, obj3);
+    console.log(obj1); //{a: 2, b: 3, c: "abc"}
+
+</script>
+</html>
