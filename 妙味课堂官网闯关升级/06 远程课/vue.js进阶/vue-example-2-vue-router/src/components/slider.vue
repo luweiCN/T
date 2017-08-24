@@ -1,13 +1,11 @@
 <template>
-  <div>
-    我是首页
+  <div class="slider">
+    我是slider
   </div>
 </template>
 
 <script>
-  export default {
-
-  }
+    export default {}
 </script>
 
 <style>

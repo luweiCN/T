@@ -1,25 +1,13 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-
-// 把VueRoute作为Vue的插件
-Vue.use(VueRouter)
-
 import App from './App'
-import home from '@/components/home.vue'
 
+import router from '@/router'
+
+import '@/assets/css/app.css'
 /* eslint-disable no-new */
-var homeRouter = new VueRouter({
-  routes: [
-    {
-      path: '/',
-      component: home
-    }
-  ]
-})
-
 new Vue({
   el: '#app',
-  router: homeRouter,
+  router,
   template: '<App />',
   components: {
     App

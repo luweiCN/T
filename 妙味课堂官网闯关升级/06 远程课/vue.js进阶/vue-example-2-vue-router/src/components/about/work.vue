@@ -1,13 +1,11 @@
 <template>
   <div>
-    我是首页
+    我是work
   </div>
 </template>
 
 <script>
-  export default {
-
-  }
+    export default {}
 </script>
 
 <style>

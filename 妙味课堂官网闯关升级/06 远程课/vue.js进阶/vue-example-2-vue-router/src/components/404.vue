@@ -1,13 +1,11 @@
 <template>
   <div>
-    我是首页
+    404,你访问的页面不存在
   </div>
 </template>
 
 <script>
-  export default {
-
-  }
+    export default {}
 </script>
 
 <style>
