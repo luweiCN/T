@@ -35,11 +35,19 @@ let router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: home
+      component: home,
+      meta: {
+        index: 0,
+        title: 'home'
+      }
     },
     {
       path: '/user/:userType?/:userId?',
-      component: user
+      component: user,
+      meta: {
+        index: 3,
+        title: 'user'
+      }
     },
     {
       path: '/home',
@@ -53,6 +61,15 @@ let router = new VueRouter({
       components: {
         default: document,
         slider
+      },
+      meta: {
+        index: 1,
+        login: true,
+        title: 'document'
+      },
+      beforeEnter (to, from, next) {
+        console.log('befroreEnter')
+        next()
       }
     },
     {
@@ -62,7 +79,11 @@ let router = new VueRouter({
         {
           path: '', // 默认的子路由
           name: 'About',
-          component: study
+          component: study,
+          meta: {
+            index: 2,
+            title: 'about'
+          }
         },
         {
           path: '/work', // 渲染出来的路径： /work
@@ -93,12 +114,36 @@ let router = new VueRouter({
           return '/home'
         } else if (to.path === '/456') {
           return {path: '/document'}
-        } else {
-          return {name: 'About'}
         }
       }
     }
   ]
 })
+
+/*
+router.beforeEach((to, from, next) => {
+  console.log('beforeEach')
+  // next()
+  // next(false)
+
+  // if (to.meta.login) {
+  //   next('/login')
+  // } else {
+  //   next()
+  // }
+
+  next()
+})
+*/
+
+/*
+router.afterEach((to, from) => {
+  if (to.meta.title) {
+    window.document.title = to.meta.title
+  } else {
+    window.document.title = 'luwei'
+  }
+})
+*/
 
 export default router

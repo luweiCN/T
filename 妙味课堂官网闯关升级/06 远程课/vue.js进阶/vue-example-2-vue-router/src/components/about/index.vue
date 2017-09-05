@@ -23,12 +23,36 @@
       </router-link>
     </ul>
     <hr>
+    测试数据：{{test}}
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-    export default {}
+    export default {
+      data () {
+        return {
+          test: '改变前'
+        }
+      },
+      beforeCreate () {
+        console.log('beforeCreate')
+      },
+      beforeRouteEnter (to, from, next) {
+        console.log('beforeRouteEnter')
+        console.log(this)
+        next((vm) => {
+          vm.test = '改变了'
+        })
+      },
+      beforeRouteUpdate (to, from, next) {
+        console.log('beforeRouteUpdate')
+        next()
+      },
+      beforeRouteLeave (to, from, next) {
+        next()
+      }
+    }
 </script>
 
 <style>
